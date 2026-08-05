@@ -48,13 +48,12 @@ export default function App() {
     <>
       <Header />
       <main className="page-shell">
-        <div className="analysis-layout">
-          <div className="layout-client">
+        <section className="analysis-layout" aria-label="Consultation analysis workspace">
+          <div className="analysis-column">
             <ClientDetailsForm details={client} onChange={setClient} />
-          </div>
-          <div className="layout-controls">
             <AnalysisControls state={analysis} onChange={setAnalysis} onResetAnalysis={resetAnalysis} onNew={newConsultation} />
           </div>
+
           <aside className="diagram-panel" aria-label="Seasonal diagram and live selection summary">
             <section className="card diagram-card">
               <p className="eyebrow">Interactive chart</p>
@@ -70,18 +69,25 @@ export default function App() {
               </div>
             </section>
           </aside>
-          <div className="layout-result">
+        </section>
+
+        {selected && (
+          <section className="full-width-result">
             <ResultSummary season={selected} />
-          </div>
-          {selected && (
-            <div className="layout-palette">
-              <ColourPalette season={selected} showTechnical={analysis.showTechnicalDetails} onToggle={toggleTechnicalDetails} />
-            </div>
-          )}
-          <div className="layout-actions">
+          </section>
+        )}
+
+        {selected && (
+          <section className="full-width-palette">
+            <ColourPalette season={selected} showTechnical={analysis.showTechnicalDetails} onToggle={toggleTechnicalDetails} />
+          </section>
+        )}
+
+        {selected && (
+          <section className="full-width-pdf-actions">
             <ActionButtons season={selected} client={client} pdfRef={pdfRef} />
-          </div>
-        </div>
+          </section>
+        )}
       </main>
       <div className="pdf-hidden" aria-hidden="true">
         <div ref={pdfRef}>{selected && <PdfPreview client={client} season={selected} />}</div>

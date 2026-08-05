@@ -38,7 +38,7 @@ button {
   background: var(--button);
   color: var(--text);
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 button:hover:not(:disabled) {
@@ -49,9 +49,8 @@ button:hover:not(:disabled) {
 button.selected,
 button[aria-pressed='true'] {
   border-color: var(--button-selected);
-  background: #efe2d2;
-  color: #2d241f;
-  box-shadow: inset 0 0 0 2px var(--button-selected);
+  background: var(--button-selected);
+  color: var(--paper);
 }
 
 button:disabled {
@@ -59,9 +58,11 @@ button:disabled {
   cursor: not-allowed;
 }
 
-:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(60, 50, 42, 0.45);
+  outline-offset: 2px;
 }
 
 .hero {
@@ -99,38 +100,40 @@ button:disabled {
 .analysis-layout {
   display: grid;
   grid-template-columns: minmax(420px, 0.85fr) minmax(520px, 1.15fr);
-  grid-template-areas:
-    'client diagram'
-    'controls diagram'
-    'result diagram'
-    'palette diagram'
-    'actions diagram';
   gap: 32px;
   align-items: start;
 }
 
-.layout-client,
-.layout-controls,
-.layout-result,
-.layout-palette,
-.layout-actions,
-.diagram-panel {
+.analysis-column,
+.diagram-panel,
+.full-width-result,
+.full-width-palette,
+.full-width-pdf-actions {
   min-width: 0;
 }
 
-.layout-client { grid-area: client; }
-.layout-controls { grid-area: controls; }
-.layout-result { grid-area: result; }
-.layout-palette { grid-area: palette; }
-.layout-actions { grid-area: actions; }
-.diagram-panel { grid-area: diagram; }
+.analysis-column {
+  display: grid;
+  gap: 1rem;
+}
+
+.full-width-result,
+.full-width-palette,
+.full-width-pdf-actions {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.full-width-pdf-actions {
+  padding-bottom: 48px;
+}
 
 .card {
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  background: var(--card);
-  padding: 1.15rem;
-  box-shadow: 0 10px 26px rgba(75, 54, 33, 0.07);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 
 .card h2 { margin-top: 0; }
@@ -165,10 +168,16 @@ textarea {
 }
 
 .control-group {
-  margin: 0;
-  border: 1px solid rgba(216, 202, 188, 0.8);
-  border-radius: 16px;
-  padding: 0.85rem;
+  margin: 0 0 1rem;
+  border: 0;
+  border-bottom: 1px solid rgba(50, 40, 32, 0.12);
+  border-radius: 0;
+  padding: 0 0 1rem;
+}
+
+.control-group:last-of-type {
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 
 .control-group legend {
@@ -184,7 +193,7 @@ textarea {
 }
 
 .diagram-card {
-  padding: 1rem 1.1rem 1.2rem;
+  padding: 0;
 }
 
 .diagram-card h2 {
@@ -229,7 +238,15 @@ textarea {
   transition: opacity 0.15s ease, filter 0.15s ease, stroke-width 0.15s ease;
 }
 
-.segment { cursor: pointer; }
+.segment {
+  cursor: pointer;
+  outline: none;
+}
+
+.segment:focus,
+.segment:focus-visible {
+  outline: none;
+}
 
 .compatible path {
   opacity: 0.96;
@@ -241,17 +258,21 @@ textarea {
   filter: saturate(0.35);
 }
 
-.segment:hover path,
-.segment:focus path {
+.segment:hover path {
   filter: saturate(1.1);
-  stroke-width: 5;
+  stroke-width: 4;
+}
+
+.segment:focus-visible path {
+  stroke: #5f554d;
+  stroke-width: 3;
 }
 
 .selected path {
   opacity: 1;
-  stroke: #2c211b;
-  stroke-width: 5;
-  filter: drop-shadow(0 0 8px rgba(44, 33, 27, 0.35));
+  stroke: #332a24;
+  stroke-width: 4;
+  filter: none;
 }
 
 .selected text { font-size: 10px; }
@@ -283,9 +304,10 @@ textarea {
 }
 
 .facts div {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 0.75rem;
+  border: 0;
+  border-top: 1px solid rgba(50, 40, 32, 0.12);
+  border-radius: 0;
+  padding: 0.75rem 0 0;
 }
 
 .facts dt {
@@ -314,15 +336,16 @@ textarea {
 
 .palette-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
 }
 
 .colour-card {
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  border: 1px solid rgba(50, 40, 32, 0.1);
+  border-radius: 8px;
   background: #fff;
+  box-shadow: none;
 }
 
 .swatch {
@@ -346,6 +369,19 @@ textarea {
 
 .actions {
   position: static;
+}
+
+.pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.pdf-actions button {
+  width: 220px;
+  min-height: 48px;
 }
 
 .pdf-hidden {
@@ -426,23 +462,22 @@ td {
 
   .analysis-layout {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      'client'
-      'controls'
-      'diagram'
-      'result'
-      'palette'
-      'actions';
     gap: 1rem;
   }
 
   .diagram-panel { position: static; }
+
+  .full-width-result,
+  .full-width-palette,
+  .full-width-pdf-actions {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 760px) {
   .hero { padding: 2.4rem 1rem 1.2rem; }
   .page-shell { width: min(100% - 24px, 720px); }
-  .card { padding: 0.9rem; border-radius: 18px; }
+  .card { padding: 0; border-radius: 0; }
   .form-grid,
   .facts,
   .list-grid,
@@ -450,7 +485,9 @@ td {
   .section-head { align-items: flex-start; flex-direction: column; }
   .button-row { gap: 0.45rem; }
   .button-row button { flex: 1 1 auto; }
-  .diagram-card { padding: 0.85rem; }
+  .pdf-actions { flex-direction: column; }
+  .pdf-actions button { width: min(100%, 320px); }
+  .diagram-card { padding: 0; }
   .axis-label { font-size: 9px; }
   .season-label { font-size: 12px; }
   .subseason-label { font-size: 8px; }
