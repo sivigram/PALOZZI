@@ -1,4 +1,4 @@
-import { AnalysisState, DominantChoice, MainSeason, MainSeasonChoice, SeasonData, Undertone, IntensityChoice } from '../types/colourAnalysis';
+import { AnalysisState, DominantChoice, IntensityChoice, MainSeason, SeasonData, Undertone } from '../types/colourAnalysis';
 
 export const seasonOrder: string[] = [
   'bright-spring',
@@ -22,11 +22,11 @@ export const seasonsByMain: Record<MainSeason, string[]> = {
   summer: ['soft-summer', 'light-summer', 'cool-summer'],
 };
 
-const trueSeasonByMain: Record<MainSeason, string> = {
-  winter: 'true-winter',
-  spring: 'true-spring',
-  autumn: 'true-autumn',
-  summer: 'true-summer',
+export const dominantOptionsBySeason: Record<MainSeason, DominantChoice[]> = {
+  winter: ['bright', 'deep', 'cool', 'true'],
+  spring: ['bright', 'light', 'warm', 'true'],
+  summer: ['soft', 'light', 'cool', 'true'],
+  autumn: ['soft', 'deep', 'warm', 'true'],
 };
 
 const resultByMainAndDominant: Record<MainSeason, Partial<Record<DominantChoice, string>>> = {
@@ -45,36 +45,42 @@ type DeriveFinalSeasonInput = {
   undertone: Undertone;
   intensity: IntensityChoice;
   dominantCharacteristic: DominantChoice;
-  mainSeason: MainSeasonChoice;
 };
 
-export const deriveFinalSeason = ({ undertone, intensity, dominantCharacteristic, mainSeason }: DeriveFinalSeasonInput): string | null => {
-  if (mainSeason === 'not-sure') return null;
-  if (undertone === 'cool' && !coolMainSeasons.includes(mainSeason)) return null;
-  if (undertone === 'warm' && !warmMainSeasons.includes(mainSeason)) return null;
-  if (intensity === 'high' && !highIntensityMainSeasons.includes(mainSeason)) return null;
-  if (intensity === 'low' && !lowIntensityMainSeasons.includes(mainSeason)) return null;
+export const deriveMainSeason = (undertone: Undertone, intensity: IntensityChoice): MainSeason | null => {
+  if (undertone === 'cool' && intensity === 'high') return 'winter';
+  if (undertone === 'warm' && intensity === 'high') return 'spring';
+  if (undertone === 'warm' && intensity === 'low') return 'autumn';
+  if (undertone === 'cool' && intensity === 'low') return 'summer';
+  return null;
+};
+
+export const deriveFinalSeason = ({ undertone, intensity, dominantCharacteristic }: DeriveFinalSeasonInput): string | null => {
+  const mainSeason = deriveMainSeason(undertone, intensity);
+  if (!mainSeason) return null;
   return resultByMainAndDominant[mainSeason][dominantCharacteristic] ?? null;
 };
 
-export const getTrueSeasonId = (mainSeason: MainSeason): string => trueSeasonByMain[mainSeason];
+export const isDominantCharacteristicAllowed = (dominant: DominantChoice, mainSeason: MainSeason | null): boolean =>
+  !mainSeason || dominantOptionsBySeason[mainSeason].includes(dominant);
 
 export const compatibleMainSeasons = (state: AnalysisState): MainSeason[] => {
-  let active: MainSeason[] = ['winter', 'spring', 'summer', 'autumn'];
+  const detected = deriveMainSeason(state.selectedUndertone, state.selectedIntensity);
+  if (detected) return [detected];
 
+  let active: MainSeason[] = ['winter', 'spring', 'summer', 'autumn'];
   if (state.selectedUndertone === 'cool') active = active.filter((season) => coolMainSeasons.includes(season));
   if (state.selectedUndertone === 'warm') active = active.filter((season) => warmMainSeasons.includes(season));
   if (state.selectedIntensity === 'high') active = active.filter((season) => highIntensityMainSeasons.includes(season));
   if (state.selectedIntensity === 'low') active = active.filter((season) => lowIntensityMainSeasons.includes(season));
-  if (state.selectedMainSeason !== 'not-sure') active = [state.selectedMainSeason];
-
   return active;
 };
 
 export const isSubseasonCompatible = (season: SeasonData, state: AnalysisState): boolean => {
   if (season.dominantCharacteristic === 'True') return false;
-  if (state.selectedMainSeason !== 'not-sure' && season.mainSeason !== state.selectedMainSeason) return false;
-  if (state.selectedDominant === 'true') return state.selectedMainSeason !== 'not-sure' && season.mainSeason === state.selectedMainSeason;
+  const detected = deriveMainSeason(state.selectedUndertone, state.selectedIntensity);
+  if (detected && season.mainSeason !== detected) return false;
+  if (state.selectedDominant === 'true') return Boolean(detected && season.mainSeason === detected);
   if (state.selectedUndertone !== 'not-sure' && season.undertone !== state.selectedUndertone) return false;
   if (state.selectedIntensity === 'high' && !highIntensityMainSeasons.includes(season.mainSeason)) return false;
   if (state.selectedIntensity === 'low' && !lowIntensityMainSeasons.includes(season.mainSeason)) return false;

@@ -1,4 +1,5 @@
-import { AnalysisState, DominantChoice, IntensityChoice, MainSeasonChoice, Undertone } from '../types/colourAnalysis';
+import { AnalysisState, DominantChoice, IntensityChoice, Undertone } from '../types/colourAnalysis';
+import { deriveMainSeason, isDominantCharacteristicAllowed } from '../utils/seasonFiltering';
 
 type Props = { state: AnalysisState; onChange: (state: AnalysisState) => void; onResetAnalysis: () => void; onNew: () => void };
 
@@ -9,33 +10,40 @@ const label = (value: string) => {
 };
 
 export function AnalysisControls({ state, onChange, onResetAnalysis, onNew }: Props) {
+  const detectedSeason = deriveMainSeason(state.selectedUndertone, state.selectedIntensity);
   const set = (patch: Partial<AnalysisState>) => onChange({ ...state, ...patch });
-  const group = <T extends string>(title: string, key: keyof AnalysisState, options: T[]) => (
+  const group = <T extends string>(title: string, key: keyof AnalysisState, options: T[], disabledOptions: string[] = []) => (
     <fieldset className="control-group">
       <legend>{title}</legend>
       <div className="button-row">
-        {options.map((option) => (
-          <button
-            key={option}
-            type="button"
-            className={state[key] === option ? 'selected' : ''}
-            aria-pressed={state[key] === option}
-            onClick={() => set({ [key]: option } as Partial<AnalysisState>)}
-          >
-            {label(option)}
-          </button>
-        ))}
+        {options.map((option) => {
+          const disabled = disabledOptions.includes(option);
+          return (
+            <button
+              key={option}
+              type="button"
+              className={state[key] === option ? 'selected' : ''}
+              aria-pressed={state[key] === option}
+              disabled={disabled}
+              onClick={() => set({ [key]: option } as Partial<AnalysisState>)}
+            >
+              {label(option)}
+            </button>
+          );
+        })}
       </div>
     </fieldset>
   );
+
+  const dominantOptions: DominantChoice[] = ['bright', 'soft', 'light', 'deep', 'cool', 'warm', 'true'];
+  const disabledDominants = dominantOptions.filter((option) => !isDominantCharacteristicAllowed(option, detectedSeason));
 
   return (
     <section className="card controls">
       <h2>Analysis controls</h2>
       {group<Undertone>('Undertone', 'selectedUndertone', ['cool', 'warm', 'not-sure'])}
       {group<IntensityChoice>('Intensity', 'selectedIntensity', ['high', 'low', 'not-sure'])}
-      {group<DominantChoice>('Dominant characteristic', 'selectedDominant', ['bright', 'soft', 'light', 'deep', 'cool', 'warm', 'true'])}
-      {group<MainSeasonChoice>('Main season', 'selectedMainSeason', ['winter', 'spring', 'summer', 'autumn', 'not-sure'])}
+      {group<DominantChoice>('Dominant characteristic', 'selectedDominant', dominantOptions, disabledDominants)}
       <div className="button-row">
         <button type="button" onClick={onResetAnalysis}>Reset analysis</button>
         <button type="button" onClick={onNew}>Start new consultation</button>
