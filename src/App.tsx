@@ -24,7 +24,7 @@ const initialAnalysis = (): AnalysisState => ({
   selectedUndertone: 'not-sure',
   selectedIntensity: 'not-sure',
   selectedDominant: 'true',
-  selectedMainSeason: 'not-sure',
+  selectedMainSeason: null,
   selectedFinalSubseason: null,
   showTechnicalDetails: false,
 });
@@ -40,7 +40,7 @@ export default function App() {
 
   const applyDerivedResult = (next: AnalysisState): AnalysisState => ({
     ...next,
-    selectedMainSeason: deriveMainSeason(next.selectedUndertone, next.selectedIntensity) ?? 'not-sure',
+    selectedMainSeason: deriveMainSeason(next.selectedUndertone, next.selectedIntensity),
     selectedFinalSubseason: deriveFinalSeason({
       undertone: next.selectedUndertone,
       intensity: next.selectedIntensity,
