@@ -1,91 +1,115 @@
-import { useRef, useState } from 'react';
-import { ActionButtons } from './components/ActionButtons';
-import { AnalysisControls } from './components/AnalysisControls';
-import { ClientDetailsForm } from './components/ClientDetailsForm';
-import { ColourPalette } from './components/ColourPalette';
-import { Header } from './components/Header';
-import { PdfPreview } from './components/PdfPreview';
-import { ResultSummary } from './components/ResultSummary';
-import { SeasonalDiagram } from './components/SeasonalDiagram';
-import { getSeasonById } from './data/seasons';
-import { AnalysisState, ClientDetails } from './types/colourAnalysis';
+import type { KeyboardEvent } from 'react';
+import { seasons } from '../data/seasons';
+import { AnalysisState, MainSeason } from '../types/colourAnalysis';
+import { compatibleMainSeasons, isSubseasonCompatible, seasonOrder } from '../utils/seasonFiltering';
 
-const today = () => new Date().toISOString().slice(0, 10);
+type Props = { state: AnalysisState; onSelect: (id: string) => void; compact?: boolean };
+type SegmentAngle = { id: string; start: number; end: number };
 
-const initialClient = (): ClientDetails => ({
-  clientName: '',
-  consultationDate: today(),
-  consultantName: '',
-  notes: '',
-});
+const centre = 200;
+const colours: Record<MainSeason, string> = {
+  winter: 'var(--winter)',
+  spring: 'var(--spring)',
+  summer: 'var(--summer)',
+  autumn: 'var(--autumn)',
+};
 
-const initialAnalysis = (): AnalysisState => ({
-  selectedUndertone: 'not-sure',
-  selectedIntensity: 'not-sure',
-  selectedDominant: 'not-sure',
-  selectedMainSeason: 'not-sure',
-  selectedFinalSubseason: null,
-  showTechnicalDetails: false,
-});
+export const subseasonAngles: SegmentAngle[] = seasonOrder.map((id, index) => ({
+  id,
+  start: -90 + index * 30,
+  end: -60 + index * 30,
+}));
 
-const summaryLabel = (value: string | null) => (value && value !== 'not-sure' ? value.replace('-', ' ') : 'Not sure');
+const quadrantAngles: Array<[MainSeason, number, number, string]> = [
+  ['spring', -90, 0, 'Spring'],
+  ['autumn', 0, 90, 'Autumn'],
+  ['summer', 90, 180, 'Summer'],
+  ['winter', 180, 270, 'Winter'],
+];
 
-export default function App() {
-  const [client, setClient] = useState(initialClient);
-  const [analysis, setAnalysis] = useState(initialAnalysis);
-  const pdfRef = useRef<HTMLDivElement | null>(null);
-  const selected = getSeasonById(analysis.selectedFinalSubseason);
+const polar = (cx: number, cy: number, radius: number, angle: number) => {
+  const radians = (angle * Math.PI) / 180;
+  return { x: cx + radius * Math.cos(radians), y: cy + radius * Math.sin(radians) };
+};
 
-  const resetAnalysis = () => setAnalysis(initialAnalysis());
-  const newConsultation = () => {
-    setClient(initialClient());
-    setAnalysis(initialAnalysis());
+const arc = (innerRadius: number, outerRadius: number, start: number, end: number) => {
+  const outerStart = polar(centre, centre, outerRadius, start);
+  const outerEnd = polar(centre, centre, outerRadius, end);
+  const innerEnd = polar(centre, centre, innerRadius, end);
+  const innerStart = polar(centre, centre, innerRadius, start);
+  const largeArc = end - start > 180 ? 1 : 0;
+  return `M ${outerStart.x} ${outerStart.y} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${outerEnd.x} ${outerEnd.y} L ${innerEnd.x} ${innerEnd.y} A ${innerRadius} ${innerRadius} 0 ${largeArc} 0 ${innerStart.x} ${innerStart.y} Z`;
+};
+
+const readableTextRotation = (midAngle: number) => {
+  const tangent = midAngle + 90;
+  return tangent > 90 && tangent < 270 ? tangent + 180 : tangent;
+};
+
+export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
+  const active = compatibleMainSeasons(state);
+  const ordered = subseasonAngles.map(({ id, start, end }) => ({ season: seasons.find((s) => s.id === id)!, start, end }));
+
+  const handleKeyDown = (event: KeyboardEvent<SVGGElement>, id: string) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onSelect(id);
+    }
   };
-  const selectFinalSubseason = (id: string) => setAnalysis({ ...analysis, selectedFinalSubseason: id });
-  const toggleTechnicalDetails = () => setAnalysis({ ...analysis, showTechnicalDetails: !analysis.showTechnicalDetails });
 
   return (
-    <>
-      <Header />
-      <main className="page-shell">
-        <div className="analysis-layout">
-          <div className="layout-client">
-            <ClientDetailsForm details={client} onChange={setClient} />
-          </div>
-          <div className="layout-controls">
-            <AnalysisControls state={analysis} onChange={setAnalysis} onResetAnalysis={resetAnalysis} onNew={newConsultation} />
-          </div>
-          <aside className="diagram-panel" aria-label="Seasonal diagram and live selection summary">
-            <section className="card diagram-card">
-              <p className="eyebrow">Interactive chart</p>
-              <h2>Seasonal diagram</h2>
-              <SeasonalDiagram state={analysis} onSelect={selectFinalSubseason} />
-              <div className="selection-summary" aria-live="polite">
-                <h3>Live selection summary</h3>
-                <p>Undertone: {summaryLabel(analysis.selectedUndertone)}</p>
-                <p>Intensity: {summaryLabel(analysis.selectedIntensity)}</p>
-                <p>Dominant characteristic: {summaryLabel(analysis.selectedDominant)}</p>
-                <p>Main season: {summaryLabel(analysis.selectedMainSeason)}</p>
-                <p>Final subseason: {selected?.name ?? 'Not selected'}</p>
-              </div>
-            </section>
-          </aside>
-          <div className="layout-result">
-            <ResultSummary season={selected} />
-          </div>
-          {selected && (
-            <div className="layout-palette">
-              <ColourPalette season={selected} showTechnical={analysis.showTechnicalDetails} onToggle={toggleTechnicalDetails} />
-            </div>
-          )}
-          <div className="layout-actions">
-            <ActionButtons season={selected} client={client} pdfRef={pdfRef} />
-          </div>
-        </div>
-      </main>
-      <div className="pdf-hidden" aria-hidden="true">
-        <div ref={pdfRef}>{selected && <PdfPreview client={client} season={selected} />}</div>
-      </div>
-    </>
+    <figure className={compact ? 'diagram compact' : 'diagram'}>
+      <svg viewBox="0 0 400 400" role="img" aria-label="Interactive circular seasonal colour analysis diagram">
+        <text className="axis-label" x="200" y="24" textAnchor="middle">High intensity</text>
+        <text className="axis-label" x="200" y="388" textAnchor="middle">Low intensity</text>
+        <text className="axis-label" x="24" y="204" textAnchor="middle" transform="rotate(-90 24 204)">Cool undertone</text>
+        <text className="axis-label" x="376" y="204" textAnchor="middle" transform="rotate(90 376 204)">Warm undertone</text>
+        <line className="diagram-axis" x1="200" y1="34" x2="200" y2="366" />
+        <line className="diagram-axis" x1="34" y1="200" x2="366" y2="200" />
+        {quadrantAngles.map(([season, start, end, name]) => {
+          const mid = (start + end) / 2;
+          const point = polar(centre, centre, 78, mid);
+          const stateClass = active.includes(season) ? 'compatible' : 'incompatible';
+          return (
+            <g key={season} className={`quadrant ${stateClass}`}>
+              <path d={arc(48, 118, start, end)} fill={colours[season]} />
+              <text className="season-label" x={point.x} y={point.y} textAnchor="middle">{name}</text>
+            </g>
+          );
+        })}
+        {ordered.map(({ season, start, end }) => {
+          const mid = (start + end) / 2;
+          const point = polar(centre, centre, 154, mid);
+          const compatible = isSubseasonCompatible(season, state);
+          const selected = state.selectedFinalSubseason === season.id;
+          return (
+            <g
+              key={season.id}
+              className={`segment ${selected ? 'selected' : compatible ? 'compatible' : 'incompatible'}`}
+              onClick={() => onSelect(season.id)}
+              onKeyDown={(event) => handleKeyDown(event, season.id)}
+              tabIndex={0}
+              role="button"
+              aria-label={`Select ${season.name}`}
+              aria-pressed={selected}
+            >
+              <path d={arc(122, 186, start, end)} fill={colours[season.mainSeason]} />
+              <text
+                className="subseason-label"
+                x={point.x}
+                y={point.y}
+                textAnchor="middle"
+                transform={`rotate(${readableTextRotation(mid)} ${point.x} ${point.y})`}
+              >
+                {season.name}
+              </text>
+            </g>
+          );
+        })}
+        <circle cx="200" cy="200" r="44" fill="var(--paper)" />
+        <text className="centre-label" x="200" y="196" textAnchor="middle">Seasonal</text>
+        <text className="centre-label" x="200" y="214" textAnchor="middle">flow</text>
+      </svg>
+    </figure>
   );
 }
