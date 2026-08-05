@@ -8,10 +8,10 @@
   --focus: #5b4636;
   --button: #fbf4eb;
   --button-selected: #6f5948;
-  --winter: #9fb4c8;
-  --spring: #e9c879;
-  --autumn: #c99a71;
-  --summer: #b9aec8;
+  --winter: #3864a4;
+  --spring: #c67d48;
+  --autumn: #cfa43b;
+  --summer: #e56f87;
 }
 
 * { box-sizing: border-box; }
