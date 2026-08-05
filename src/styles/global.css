@@ -1,0 +1,494 @@
+:root {
+  --bg: #f7f0e6;
+  --paper: #fffaf2;
+  --card: #fffdf8;
+  --text: #26221f;
+  --muted: #766d65;
+  --border: #d8cabc;
+  --focus: #5b4636;
+  --button: #fbf4eb;
+  --button-selected: #6f5948;
+  --winter: #3864a4;
+  --spring: #c67d48;
+  --autumn: #cfa43b;
+  --summer: #e56f87;
+}
+
+* { box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, Arial, sans-serif;
+}
+
+button,
+input,
+textarea { font: inherit; }
+
+button {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.62rem 1rem;
+  background: var(--button);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--focus);
+  background: var(--paper);
+}
+
+button.selected,
+button[aria-pressed='true'] {
+  border-color: var(--button-selected);
+  background: var(--button-selected);
+  color: var(--paper);
+}
+
+button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(60, 50, 42, 0.45);
+  outline-offset: 2px;
+}
+
+.hero {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0.3rem 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-shell {
+  width: min(1440px, 94vw);
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.analysis-layout {
+  display: grid;
+  grid-template-columns: minmax(420px, 0.85fr) minmax(520px, 1.15fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.analysis-column,
+.diagram-panel,
+.full-width-result,
+.full-width-palette,
+.full-width-pdf-actions {
+  min-width: 0;
+}
+
+.analysis-column {
+  display: grid;
+  gap: 1rem;
+}
+
+.full-width-result,
+.full-width-palette,
+.full-width-pdf-actions {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.full-width-pdf-actions {
+  padding-bottom: 48px;
+}
+
+.card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.card h2 { margin-top: 0; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.wide { grid-column: 1 / -1; }
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--text);
+  padding: 0.8rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.control-group {
+  margin: 0 0 1rem;
+  border: 0;
+  border-bottom: 1px solid rgba(50, 40, 32, 0.12);
+  border-radius: 0;
+  padding: 0 0 1rem;
+}
+
+.control-group:last-of-type {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.control-group legend {
+  padding: 0 0.35rem;
+  color: #3a302a;
+  font-weight: 800;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.diagram-card {
+  padding: 0;
+}
+
+.diagram-card h2 {
+  margin-bottom: 0.35rem;
+  font-size: 1.35rem;
+}
+
+.diagram {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.diagram text {
+  fill: var(--text);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.axis-label { font-size: 11px; }
+.season-label { font-size: 15px; text-transform: uppercase; }
+.subseason-label { font-size: 9.4px; }
+.centre-label { font-size: 12px; }
+
+.diagram-axis {
+  stroke: rgba(38, 34, 31, 0.28);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.segment path,
+.quadrant path {
+  stroke: var(--paper);
+  stroke-width: 2;
+  transition: opacity 0.15s ease, filter 0.15s ease, stroke-width 0.15s ease;
+}
+
+.segment {
+  cursor: pointer;
+  outline: none;
+}
+
+.segment:focus,
+.segment:focus-visible {
+  outline: none;
+}
+
+.compatible path {
+  opacity: 0.96;
+  stroke-width: 3;
+}
+
+.incompatible path {
+  opacity: 0.28;
+  filter: saturate(0.35);
+}
+
+.segment:hover path {
+  filter: saturate(1.1);
+  stroke-width: 4;
+}
+
+.segment:focus-visible path {
+  stroke: #5f554d;
+  stroke-width: 3;
+}
+
+.selected path {
+  opacity: 1;
+  stroke: #332a24;
+  stroke-width: 4;
+  filter: none;
+}
+
+.selected text { font-size: 10px; }
+
+.selection-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.2rem 0.8rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.selection-summary h3 {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.selection-summary p { margin: 0; text-transform: capitalize; }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.65rem;
+}
+
+.facts div {
+  border: 0;
+  border-top: 1px solid rgba(50, 40, 32, 0.12);
+  border-radius: 0;
+  padding: 0.75rem 0 0;
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.colour-card {
+  overflow: hidden;
+  border: 1px solid rgba(50, 40, 32, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.swatch {
+  display: grid;
+  min-height: 120px;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 800;
+}
+
+.colour-info {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  color: var(--text);
+}
+
+.note,
+.muted { color: var(--muted); }
+
+.actions {
+  position: static;
+}
+
+.pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.pdf-actions button {
+  width: 220px;
+  min-height: 48px;
+}
+
+.pdf-hidden {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+
+.pdf-document {
+  width: 794px;
+  background: var(--paper);
+  color: var(--text);
+}
+
+.pdf-page {
+  min-height: 1123px;
+  padding: 48px;
+  page-break-after: always;
+  background: var(--paper);
+}
+
+.compact { max-width: 420px; }
+
+.pdf-palette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.pdf-palette div {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--border);
+  padding: 12px;
+}
+
+.pdf-palette span,
+.mini {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #999;
+}
+
+.mini {
+  width: 28px;
+  height: 28px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
+
+.disclaimer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  color: var(--muted);
+}
+
+@media (min-width: 1024px) {
+  .diagram-panel {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .page-shell { width: min(760px, 94vw); }
+
+  .analysis-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .diagram-panel { position: static; }
+
+  .full-width-result,
+  .full-width-palette,
+  .full-width-pdf-actions {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero { padding: 2.4rem 1rem 1.2rem; }
+  .page-shell { width: min(100% - 24px, 720px); }
+  .card { padding: 0; border-radius: 0; }
+  .form-grid,
+  .facts,
+  .list-grid,
+  .selection-summary { grid-template-columns: 1fr; }
+  .section-head { align-items: flex-start; flex-direction: column; }
+  .button-row { gap: 0.45rem; }
+  .button-row button { flex: 1 1 auto; }
+  .pdf-actions { flex-direction: column; }
+  .pdf-actions button { width: min(100%, 320px); }
+  .diagram-card { padding: 0; }
+  .axis-label { font-size: 9px; }
+  .season-label { font-size: 12px; }
+  .subseason-label { font-size: 8px; }
+}
