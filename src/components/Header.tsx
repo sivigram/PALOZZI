@@ -1,0 +1,1 @@
+export function Header() { return <header className="hero"><p className="eyebrow">Personal Colour Analysis</p><h1>Interactive Colour Consultation</h1><p>Record draping observations, explore seasonal compatibility and create a personalised client report.</p></header>; }
