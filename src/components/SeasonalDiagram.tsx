@@ -1,6 +1,115 @@
-import { seasons } from '../data/seasons';import { AnalysisState, MainSeason } from '../types/colourAnalysis';import { compatibleMainSeasons, isSubseasonCompatible, seasonOrder } from '../utils/seasonFiltering';
-type Props={state:AnalysisState; onSelect:(id:string)=>void; compact?:boolean};
-const colours:Record<MainSeason,string>={winter:'var(--winter)',spring:'var(--spring)',summer:'var(--summer)',autumn:'var(--autumn)'};
-const polar=(cx:number,cy:number,r:number,a:number)=>{const rad=(a-90)*Math.PI/180;return{x:cx+r*Math.cos(rad),y:cy+r*Math.sin(rad)}};
-const arc=(r1:number,r2:number,start:number,end:number)=>{const a=polar(200,200,r2,start),b=polar(200,200,r2,end),c=polar(200,200,r1,end),d=polar(200,200,r1,start);const large=end-start>180?1:0;return`M ${a.x} ${a.y} A ${r2} ${r2} 0 ${large} 1 ${b.x} ${b.y} L ${c.x} ${c.y} A ${r1} ${r1} 0 ${large} 0 ${d.x} ${d.y} Z`};
-export function SeasonalDiagram({state,onSelect,compact=false}:Props){const active=compatibleMainSeasons(state);const ordered=seasonOrder.map((id)=>seasons.find((s)=>s.id===id)!);const quadrants:[MainSeason,number,number,string][]=[['winter',270,360,'Winter'],['spring',0,90,'Spring'],['autumn',90,180,'Autumn'],['summer',180,270,'Summer']];return <figure className={compact?'diagram compact':'diagram'}><svg viewBox="0 0 400 400" role="img" aria-label="Interactive circular seasonal colour analysis diagram"><text x="200" y="24" textAnchor="middle">High intensity</text><text x="200" y="390" textAnchor="middle">Low intensity</text><text x="25" y="204" textAnchor="middle" transform="rotate(-90 25 204)">Cool undertone</text><text x="375" y="204" textAnchor="middle" transform="rotate(90 375 204)">Warm undertone</text>{quadrants.map(([season,start,end,name])=>{const mid=(start+end)/2,p=polar(200,200,82,mid);const stateClass=active.includes(season)?'compatible':'incompatible';return <g key={season} className={`quadrant ${stateClass}`}><path d={arc(48,120,start,end)} fill={colours[season]} /><text x={p.x} y={p.y} textAnchor="middle">{name}</text></g>})}{ordered.map((s,i)=>{const start=i*30,end=start+30,mid=start+15,p=polar(200,200,154,mid);const compatible=isSubseasonCompatible(s,state);const selected=state.selectedFinalSubseason===s.id;return <g key={s.id} className={`segment ${selected?'selected':compatible?'compatible':'incompatible'}`} onClick={()=>onSelect(s.id)} onKeyDown={(e)=>{if(e.key==='Enter'||e.key===' ')onSelect(s.id)}} tabIndex={0} role="button" aria-label={`Select ${s.name}`} aria-pressed={selected}><path d={arc(122,184,start,end)} fill={colours[s.mainSeason]} /><text x={p.x} y={p.y} textAnchor="middle" transform={`rotate(${mid>90&&mid<270?mid+180:mid} ${p.x} ${p.y})`}>{s.name}</text></g>})}<circle cx="200" cy="200" r="44" fill="var(--paper)"/><text x="200" y="196" textAnchor="middle">Seasonal</text><text x="200" y="214" textAnchor="middle">flow</text></svg></figure>}
+import type { KeyboardEvent } from 'react';
+import { seasons } from '../data/seasons';
+import { AnalysisState, MainSeason } from '../types/colourAnalysis';
+import { compatibleMainSeasons, isSubseasonCompatible, seasonOrder } from '../utils/seasonFiltering';
+
+type Props = { state: AnalysisState; onSelect: (id: string) => void; compact?: boolean };
+type SegmentAngle = { id: string; start: number; end: number };
+
+const centre = 200;
+const colours: Record<MainSeason, string> = {
+  winter: 'var(--winter)',
+  spring: 'var(--spring)',
+  summer: 'var(--summer)',
+  autumn: 'var(--autumn)',
+};
+
+export const subseasonAngles: SegmentAngle[] = seasonOrder.map((id, index) => ({
+  id,
+  start: -90 + index * 30,
+  end: -60 + index * 30,
+}));
+
+const quadrantAngles: Array<[MainSeason, number, number, string]> = [
+  ['spring', -90, 0, 'Spring'],
+  ['autumn', 0, 90, 'Autumn'],
+  ['summer', 90, 180, 'Summer'],
+  ['winter', 180, 270, 'Winter'],
+];
+
+const polar = (cx: number, cy: number, radius: number, angle: number) => {
+  const radians = (angle * Math.PI) / 180;
+  return { x: cx + radius * Math.cos(radians), y: cy + radius * Math.sin(radians) };
+};
+
+const arc = (innerRadius: number, outerRadius: number, start: number, end: number) => {
+  const outerStart = polar(centre, centre, outerRadius, start);
+  const outerEnd = polar(centre, centre, outerRadius, end);
+  const innerEnd = polar(centre, centre, innerRadius, end);
+  const innerStart = polar(centre, centre, innerRadius, start);
+  const largeArc = end - start > 180 ? 1 : 0;
+  return `M ${outerStart.x} ${outerStart.y} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${outerEnd.x} ${outerEnd.y} L ${innerEnd.x} ${innerEnd.y} A ${innerRadius} ${innerRadius} 0 ${largeArc} 0 ${innerStart.x} ${innerStart.y} Z`;
+};
+
+const readableTextRotation = (midAngle: number) => {
+  const tangent = midAngle + 90;
+  return tangent > 90 && tangent < 270 ? tangent + 180 : tangent;
+};
+
+export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
+  const active = compatibleMainSeasons(state);
+  const ordered = subseasonAngles.map(({ id, start, end }) => ({ season: seasons.find((s) => s.id === id)!, start, end }));
+
+  const handleKeyDown = (event: KeyboardEvent<SVGGElement>, id: string) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onSelect(id);
+    }
+  };
+
+  return (
+    <figure className={compact ? 'diagram compact' : 'diagram'}>
+      <svg viewBox="0 0 400 400" role="img" aria-label="Interactive circular seasonal colour analysis diagram">
+        <text className="axis-label" x="200" y="24" textAnchor="middle">High intensity</text>
+        <text className="axis-label" x="200" y="388" textAnchor="middle">Low intensity</text>
+        <text className="axis-label" x="24" y="204" textAnchor="middle" transform="rotate(-90 24 204)">Cool undertone</text>
+        <text className="axis-label" x="376" y="204" textAnchor="middle" transform="rotate(90 376 204)">Warm undertone</text>
+        <line className="diagram-axis" x1="200" y1="34" x2="200" y2="366" />
+        <line className="diagram-axis" x1="34" y1="200" x2="366" y2="200" />
+        {quadrantAngles.map(([season, start, end, name]) => {
+          const mid = (start + end) / 2;
+          const point = polar(centre, centre, 78, mid);
+          const stateClass = active.includes(season) ? 'compatible' : 'incompatible';
+          return (
+            <g key={season} className={`quadrant ${stateClass}`}>
+              <path d={arc(48, 118, start, end)} fill={colours[season]} />
+              <text className="season-label" x={point.x} y={point.y} textAnchor="middle">{name}</text>
+            </g>
+          );
+        })}
+        {ordered.map(({ season, start, end }) => {
+          const mid = (start + end) / 2;
+          const point = polar(centre, centre, 154, mid);
+          const compatible = isSubseasonCompatible(season, state);
+          const selected = state.selectedFinalSubseason === season.id;
+          return (
+            <g
+              key={season.id}
+              className={`segment ${selected ? 'selected' : compatible ? 'compatible' : 'incompatible'}`}
+              onClick={() => onSelect(season.id)}
+              onKeyDown={(event) => handleKeyDown(event, season.id)}
+              tabIndex={0}
+              role="button"
+              aria-label={`Select ${season.name}`}
+              aria-pressed={selected}
+            >
+              <path d={arc(122, 186, start, end)} fill={colours[season.mainSeason]} />
+              <text
+                className="subseason-label"
+                x={point.x}
+                y={point.y}
+                textAnchor="middle"
+                transform={`rotate(${readableTextRotation(mid)} ${point.x} ${point.y})`}
+              >
+                {season.name}
+              </text>
+            </g>
+          );
+        })}
+        <circle cx="200" cy="200" r="44" fill="var(--paper)" />
+        <text className="centre-label" x="200" y="196" textAnchor="middle">Seasonal</text>
+        <text className="centre-label" x="200" y="214" textAnchor="middle">flow</text>
+      </svg>
+    </figure>
+  );
+}
