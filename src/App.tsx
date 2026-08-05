@@ -9,7 +9,7 @@ import { ResultSummary } from './components/ResultSummary';
 import { SeasonalDiagram } from './components/SeasonalDiagram';
 import { getSeasonById } from './data/seasons';
 import { AnalysisState, ClientDetails, MainSeason } from './types/colourAnalysis';
-import { deriveFinalSeason } from './utils/seasonFiltering';
+import { deriveFinalSeason, deriveMainSeason } from './utils/seasonFiltering';
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -35,15 +35,16 @@ export default function App() {
   const [client, setClient] = useState(initialClient);
   const [analysis, setAnalysis] = useState(initialAnalysis);
   const pdfRef = useRef<HTMLDivElement | null>(null);
+  const detectedSeason = deriveMainSeason(analysis.selectedUndertone, analysis.selectedIntensity);
   const selected = getSeasonById(analysis.selectedFinalSubseason);
 
   const applyDerivedResult = (next: AnalysisState) => ({
     ...next,
+    selectedMainSeason: deriveMainSeason(next.selectedUndertone, next.selectedIntensity) ?? 'not-sure',
     selectedFinalSubseason: deriveFinalSeason({
       undertone: next.selectedUndertone,
       intensity: next.selectedIntensity,
       dominantCharacteristic: next.selectedDominant,
-      mainSeason: next.selectedMainSeason,
     }),
   });
 
@@ -88,8 +89,8 @@ export default function App() {
                 <p>Undertone: {summaryLabel(analysis.selectedUndertone)}</p>
                 <p>Intensity: {summaryLabel(analysis.selectedIntensity)}</p>
                 <p>Dominant characteristic: {summaryLabel(analysis.selectedDominant)}</p>
-                <p>Main season: {summaryLabel(analysis.selectedMainSeason)}</p>
-                <p>Final result: {analysis.selectedDominant === 'true' && analysis.selectedMainSeason === 'not-sure' ? 'Select a main season to complete the True season result.' : selected?.name ?? 'Pending'}</p>
+                <p>Detected season: {summaryLabel(detectedSeason)}</p>
+                <p>Final result: {analysis.selectedDominant === 'true' && !detectedSeason ? 'Select undertone and intensity to determine the True season.' : selected?.name ?? 'Pending'}</p>
               </div>
             </section>
           </aside>

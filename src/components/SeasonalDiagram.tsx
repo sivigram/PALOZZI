@@ -6,7 +6,7 @@ import { compatibleMainSeasons, isSubseasonCompatible, seasonOrder } from '../ut
 type Props = { state: AnalysisState; onSelect: (id: string) => void; compact?: boolean };
 type SegmentAngle = { id: string; start: number; end: number };
 
-const centre = 200;
+const centre = 220;
 const colours: Record<MainSeason, string> = {
   winter: 'var(--winter)',
   spring: 'var(--spring)',
@@ -61,13 +61,13 @@ export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
 
   return (
     <figure className={compact ? 'diagram compact' : 'diagram'}>
-      <svg viewBox="0 0 400 400" role="img" aria-label="Interactive circular seasonal colour analysis diagram">
-        <text className="axis-label" x="200" y="24" textAnchor="middle">High intensity</text>
-        <text className="axis-label" x="200" y="388" textAnchor="middle">Low intensity</text>
-        <text className="axis-label" x="24" y="204" textAnchor="middle" transform="rotate(-90 24 204)">Cool undertone</text>
-        <text className="axis-label" x="376" y="204" textAnchor="middle" transform="rotate(90 376 204)">Warm undertone</text>
-        <line className="diagram-axis" x1="200" y1="34" x2="200" y2="366" />
-        <line className="diagram-axis" x1="34" y1="200" x2="366" y2="200" />
+      <svg viewBox="0 0 440 440" role="img" aria-label="Interactive circular seasonal colour analysis diagram">
+        <text className="axis-label" x="220" y="26" textAnchor="middle">High intensity</text>
+        <text className="axis-label" x="220" y="418" textAnchor="middle">Low intensity</text>
+        <text className="axis-label" x="24" y="224" textAnchor="middle" transform="rotate(-90 24 224)">Cool undertone</text>
+        <text className="axis-label" x="416" y="224" textAnchor="middle" transform="rotate(90 416 224)">Warm undertone</text>
+        <line className="diagram-axis" x1="220" y1="54" x2="220" y2="386" />
+        <line className="diagram-axis" x1="54" y1="220" x2="386" y2="220" />
         {quadrantAngles.map(([season, start, end, name]) => {
           const mid = (start + end) / 2;
           const point = polar(centre, centre, 78, mid);
@@ -81,7 +81,7 @@ export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
         })}
         {ordered.map(({ season, start, end }) => {
           const mid = (start + end) / 2;
-          const point = polar(centre, centre, 154, mid);
+          const point = polar(centre, centre, 150, mid);
           const compatible = trueMainSeason === season.mainSeason || isSubseasonCompatible(season, state);
           const selected = !trueMainSeason && state.selectedFinalSubseason === season.id;
           return (
@@ -108,9 +108,9 @@ export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
             </g>
           );
         })}
-        <circle cx="200" cy="200" r="44" fill="var(--paper)" />
-        <text className="centre-label" x="200" y="196" textAnchor="middle">Seasonal</text>
-        <text className="centre-label" x="200" y="214" textAnchor="middle">flow</text>
+        <circle cx="220" cy="220" r="44" fill="var(--paper)" />
+        <text className="centre-label" x="220" y="216" textAnchor="middle">Seasonal</text>
+        <text className="centre-label" x="220" y="234" textAnchor="middle">flow</text>
       </svg>
     </figure>
   );
