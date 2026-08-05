@@ -1,7 +1,7 @@
 export type MainSeason = 'winter' | 'spring' | 'summer' | 'autumn';
 export type Undertone = 'cool' | 'warm' | 'not-sure';
 export type IntensityChoice = 'high' | 'low' | 'not-sure';
-export type DominantChoice = 'bright' | 'soft' | 'light' | 'deep' | 'cool' | 'warm' | 'not-sure';
+export type DominantChoice = 'bright' | 'soft' | 'light' | 'deep' | 'cool' | 'warm' | 'true';
 export type MainSeasonChoice = MainSeason | 'not-sure';
 export type Value = 'light' | 'medium' | 'deep';
 export type Intensity = 'bright' | 'soft' | 'medium';

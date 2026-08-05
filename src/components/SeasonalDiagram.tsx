@@ -48,6 +48,8 @@ const readableTextRotation = (midAngle: number) => {
 
 export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
   const active = compatibleMainSeasons(state);
+  const selectedSeason = seasons.find((season) => season.id === state.selectedFinalSubseason);
+  const trueMainSeason = selectedSeason?.dominantCharacteristic === 'True' ? selectedSeason.mainSeason : null;
   const ordered = subseasonAngles.map(({ id, start, end }) => ({ season: seasons.find((s) => s.id === id)!, start, end }));
 
   const handleKeyDown = (event: KeyboardEvent<SVGGElement>, id: string) => {
@@ -69,7 +71,7 @@ export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
         {quadrantAngles.map(([season, start, end, name]) => {
           const mid = (start + end) / 2;
           const point = polar(centre, centre, 78, mid);
-          const stateClass = active.includes(season) ? 'compatible' : 'incompatible';
+          const stateClass = trueMainSeason === season ? 'selected' : active.includes(season) ? 'compatible' : 'incompatible';
           return (
             <g key={season} className={`quadrant ${stateClass}`}>
               <path d={arc(48, 118, start, end)} fill={colours[season]} />
@@ -80,8 +82,8 @@ export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
         {ordered.map(({ season, start, end }) => {
           const mid = (start + end) / 2;
           const point = polar(centre, centre, 154, mid);
-          const compatible = isSubseasonCompatible(season, state);
-          const selected = state.selectedFinalSubseason === season.id;
+          const compatible = trueMainSeason === season.mainSeason || isSubseasonCompatible(season, state);
+          const selected = !trueMainSeason && state.selectedFinalSubseason === season.id;
           return (
             <g
               key={season.id}

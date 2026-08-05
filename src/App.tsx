@@ -8,7 +8,8 @@ import { PdfPreview } from './components/PdfPreview';
 import { ResultSummary } from './components/ResultSummary';
 import { SeasonalDiagram } from './components/SeasonalDiagram';
 import { getSeasonById } from './data/seasons';
-import { AnalysisState, ClientDetails } from './types/colourAnalysis';
+import { AnalysisState, ClientDetails, MainSeason } from './types/colourAnalysis';
+import { deriveFinalSeason } from './utils/seasonFiltering';
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -22,7 +23,7 @@ const initialClient = (): ClientDetails => ({
 const initialAnalysis = (): AnalysisState => ({
   selectedUndertone: 'not-sure',
   selectedIntensity: 'not-sure',
-  selectedDominant: 'not-sure',
+  selectedDominant: 'true',
   selectedMainSeason: 'not-sure',
   selectedFinalSubseason: null,
   showTechnicalDetails: false,
@@ -36,12 +37,35 @@ export default function App() {
   const pdfRef = useRef<HTMLDivElement | null>(null);
   const selected = getSeasonById(analysis.selectedFinalSubseason);
 
+  const applyDerivedResult = (next: AnalysisState) => ({
+    ...next,
+    selectedFinalSubseason: deriveFinalSeason({
+      undertone: next.selectedUndertone,
+      intensity: next.selectedIntensity,
+      dominantCharacteristic: next.selectedDominant,
+      mainSeason: next.selectedMainSeason,
+    }),
+  });
+
+  const updateAnalysis = (next: AnalysisState) => setAnalysis(applyDerivedResult(next));
   const resetAnalysis = () => setAnalysis(initialAnalysis());
   const newConsultation = () => {
     setClient(initialClient());
     setAnalysis(initialAnalysis());
   };
-  const selectFinalSubseason = (id: string) => setAnalysis({ ...analysis, selectedFinalSubseason: id });
+  const selectFinalSubseason = (id: string) => {
+    const season = getSeasonById(id);
+    if (!season || season.dominantCharacteristic === 'True') return;
+    const mainSeason = season.mainSeason as MainSeason;
+    setAnalysis({
+      ...analysis,
+      selectedUndertone: season.undertone,
+      selectedIntensity: ['winter', 'spring'].includes(mainSeason) ? 'high' : 'low',
+      selectedDominant: season.dominantCharacteristic.toLowerCase() as AnalysisState['selectedDominant'],
+      selectedMainSeason: mainSeason,
+      selectedFinalSubseason: id,
+    });
+  };
   const toggleTechnicalDetails = () => setAnalysis({ ...analysis, showTechnicalDetails: !analysis.showTechnicalDetails });
 
   return (
@@ -51,7 +75,7 @@ export default function App() {
         <section className="analysis-layout" aria-label="Consultation analysis workspace">
           <div className="analysis-column">
             <ClientDetailsForm details={client} onChange={setClient} />
-            <AnalysisControls state={analysis} onChange={setAnalysis} onResetAnalysis={resetAnalysis} onNew={newConsultation} />
+            <AnalysisControls state={analysis} onChange={updateAnalysis} onResetAnalysis={resetAnalysis} onNew={newConsultation} />
           </div>
 
           <aside className="diagram-panel" aria-label="Seasonal diagram and live selection summary">
@@ -65,7 +89,7 @@ export default function App() {
                 <p>Intensity: {summaryLabel(analysis.selectedIntensity)}</p>
                 <p>Dominant characteristic: {summaryLabel(analysis.selectedDominant)}</p>
                 <p>Main season: {summaryLabel(analysis.selectedMainSeason)}</p>
-                <p>Final subseason: {selected?.name ?? 'Not selected'}</p>
+                <p>Final result: {analysis.selectedDominant === 'true' && analysis.selectedMainSeason === 'not-sure' ? 'Select a main season to complete the True season result.' : selected?.name ?? 'Pending'}</p>
               </div>
             </section>
           </aside>
