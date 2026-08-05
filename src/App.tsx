@@ -38,7 +38,7 @@ export default function App() {
   const detectedSeason = deriveMainSeason(analysis.selectedUndertone, analysis.selectedIntensity);
   const selected = getSeasonById(analysis.selectedFinalSubseason);
 
-  const applyDerivedResult = (next: AnalysisState) => ({
+  const applyDerivedResult = (next: AnalysisState): AnalysisState => ({
     ...next,
     selectedMainSeason: deriveMainSeason(next.selectedUndertone, next.selectedIntensity) ?? 'not-sure',
     selectedFinalSubseason: deriveFinalSeason({
