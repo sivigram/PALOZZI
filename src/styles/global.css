@@ -248,9 +248,15 @@ textarea {
   outline: none;
 }
 
-.compatible path {
-  opacity: 0.96;
+.quadrant.compatible path,
+.quadrant.selected path {
+  opacity: 1;
   stroke-width: 3;
+}
+
+.segment.compatible path {
+  opacity: 0.88;
+  stroke-width: 2.5;
 }
 
 .incompatible path {
@@ -268,34 +274,14 @@ textarea {
   stroke-width: 3;
 }
 
-.selected path {
-  opacity: 1;
+.segment.selected path {
+  opacity: 0.82;
   stroke: #332a24;
-  stroke-width: 4;
+  stroke-width: 2.75;
   filter: none;
 }
 
-.selected text { font-size: 10px; }
-
-.selection-summary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.2rem 0.8rem;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.93rem;
-}
-
-.selection-summary h3 {
-  grid-column: 1 / -1;
-  margin: 0 0 0.2rem;
-  color: var(--text);
-  font-size: 1rem;
-}
-
-.selection-summary p { margin: 0; text-transform: capitalize; }
+.segment.selected text { font-size: 9.6px; }
 
 .facts {
   display: grid;
@@ -481,7 +467,6 @@ td {
   .form-grid,
   .facts,
   .list-grid,
-  .selection-summary { grid-template-columns: 1fr; }
   .section-head { align-items: flex-start; flex-direction: column; }
   .button-row { gap: 0.45rem; }
   .button-row button { flex: 1 1 auto; }

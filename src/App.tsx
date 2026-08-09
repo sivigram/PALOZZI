@@ -24,23 +24,20 @@ const initialAnalysis = (): AnalysisState => ({
   selectedUndertone: 'not-sure',
   selectedIntensity: 'not-sure',
   selectedDominant: 'true',
-  selectedMainSeason: 'not-sure',
+  selectedMainSeason: null,
   selectedFinalSubseason: null,
   showTechnicalDetails: false,
 });
-
-const summaryLabel = (value: string | null) => (value && value !== 'not-sure' ? value.replace('-', ' ') : 'Not sure');
 
 export default function App() {
   const [client, setClient] = useState(initialClient);
   const [analysis, setAnalysis] = useState(initialAnalysis);
   const pdfRef = useRef<HTMLDivElement | null>(null);
-  const detectedSeason = deriveMainSeason(analysis.selectedUndertone, analysis.selectedIntensity);
   const selected = getSeasonById(analysis.selectedFinalSubseason);
 
   const applyDerivedResult = (next: AnalysisState): AnalysisState => ({
     ...next,
-    selectedMainSeason: deriveMainSeason(next.selectedUndertone, next.selectedIntensity) ?? 'not-sure',
+    selectedMainSeason: deriveMainSeason(next.selectedUndertone, next.selectedIntensity),
     selectedFinalSubseason: deriveFinalSeason({
       undertone: next.selectedUndertone,
       intensity: next.selectedIntensity,
@@ -79,19 +76,11 @@ export default function App() {
             <AnalysisControls state={analysis} onChange={updateAnalysis} onResetAnalysis={resetAnalysis} onNew={newConsultation} />
           </div>
 
-          <aside className="diagram-panel" aria-label="Seasonal diagram and live selection summary">
+          <aside className="diagram-panel" aria-label="Seasonal diagram">
             <section className="card diagram-card">
               <p className="eyebrow">Interactive chart</p>
               <h2>Seasonal diagram</h2>
               <SeasonalDiagram state={analysis} onSelect={selectFinalSubseason} />
-              <div className="selection-summary" aria-live="polite">
-                <h3>Live selection summary</h3>
-                <p>Undertone: {summaryLabel(analysis.selectedUndertone)}</p>
-                <p>Intensity: {summaryLabel(analysis.selectedIntensity)}</p>
-                <p>Dominant characteristic: {summaryLabel(analysis.selectedDominant)}</p>
-                <p>Detected season: {summaryLabel(detectedSeason)}</p>
-                <p>Final result: {analysis.selectedDominant === 'true' && !detectedSeason ? 'Select undertone and intensity to determine the True season.' : selected?.name ?? 'Pending'}</p>
-              </div>
             </section>
           </aside>
         </section>

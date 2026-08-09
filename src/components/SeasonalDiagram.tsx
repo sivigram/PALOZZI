@@ -61,11 +61,11 @@ export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
 
   return (
     <figure className={compact ? 'diagram compact' : 'diagram'}>
-      <svg viewBox="0 0 440 440" role="img" aria-label="Interactive circular seasonal colour analysis diagram">
-        <text className="axis-label" x="220" y="26" textAnchor="middle">High intensity</text>
-        <text className="axis-label" x="220" y="418" textAnchor="middle">Low intensity</text>
-        <text className="axis-label" x="24" y="224" textAnchor="middle" transform="rotate(-90 24 224)">Cool undertone</text>
-        <text className="axis-label" x="416" y="224" textAnchor="middle" transform="rotate(90 416 224)">Warm undertone</text>
+      <svg viewBox="-60 -60 560 560" role="img" aria-label="Interactive circular seasonal colour analysis diagram">
+        <text className="axis-label" x="220" y="-18" textAnchor="middle">High intensity</text>
+        <text className="axis-label" x="220" y="464" textAnchor="middle">Low intensity</text>
+        <text className="axis-label" x="-20" y="220" textAnchor="middle" transform="rotate(-90 -20 220)">Cool undertone</text>
+        <text className="axis-label" x="460" y="220" textAnchor="middle" transform="rotate(90 460 220)">Warm undertone</text>
         <line className="diagram-axis" x1="220" y1="54" x2="220" y2="386" />
         <line className="diagram-axis" x1="54" y1="220" x2="386" y2="220" />
         {quadrantAngles.map(([season, start, end, name]) => {
