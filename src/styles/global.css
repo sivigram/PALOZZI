@@ -250,8 +250,8 @@ textarea {
 
 .quadrant.compatible path,
 .quadrant.selected path {
-  opacity: 1;
-  stroke-width: 3;
+  opacity: 0.88;
+  stroke-width: 2.5;
 }
 
 .segment.compatible path {
@@ -282,6 +282,34 @@ textarea {
 }
 
 .segment.selected text { font-size: 9.6px; }
+
+.segment.primary path {
+  opacity: 1;
+  stroke: #332a24;
+  stroke-width: 3px;
+  filter: none;
+}
+
+.segment.primary text {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.segment.related path {
+  opacity: 0.62;
+  stroke: rgba(51, 42, 36, 0.42);
+  stroke-width: 2px;
+  filter: none;
+}
+
+.segment.non-related path {
+  opacity: 0.16;
+  stroke: var(--paper);
+  stroke-width: 1.5px;
+  filter: saturate(0.35);
+}
+
+.segment.non-related text { opacity: 0.58; }
 
 .facts {
   display: grid;
