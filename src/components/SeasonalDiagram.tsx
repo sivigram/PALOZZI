@@ -1,4 +1,5 @@
 import type { KeyboardEvent } from 'react';
+import { getSeasonVisualState } from '../data/seasonRelationships';
 import { seasons } from '../data/seasons';
 import { AnalysisState, MainSeason } from '../types/colourAnalysis';
 import { compatibleMainSeasons, isSubseasonCompatible, seasonOrder } from '../utils/seasonFiltering';
@@ -84,10 +85,15 @@ export function SeasonalDiagram({ state, onSelect, compact = false }: Props) {
           const point = polar(centre, centre, 150, mid);
           const compatible = trueMainSeason === season.mainSeason || isSubseasonCompatible(season, state);
           const selected = !trueMainSeason && state.selectedFinalSubseason === season.id;
+          const relationshipState = trueMainSeason
+            ? null
+            : getSeasonVisualState(season.id, state.selectedFinalSubseason);
+          const visualState = relationshipState ?? (selected ? 'selected' : compatible ? 'compatible' : 'incompatible');
           return (
             <g
               key={season.id}
-              className={`segment ${selected ? 'selected' : compatible ? 'compatible' : 'incompatible'}`}
+              className={`segment ${visualState}`}
+              data-state={relationshipState ?? undefined}
               onClick={() => onSelect(season.id)}
               onKeyDown={(event) => handleKeyDown(event, season.id)}
               tabIndex={0}
