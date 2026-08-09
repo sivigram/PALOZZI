@@ -248,9 +248,15 @@ textarea {
   outline: none;
 }
 
-.compatible path {
-  opacity: 0.96;
+.quadrant.compatible path,
+.quadrant.selected path {
+  opacity: 1;
   stroke-width: 3;
+}
+
+.segment.compatible path {
+  opacity: 0.88;
+  stroke-width: 2.5;
 }
 
 .incompatible path {
@@ -268,14 +274,14 @@ textarea {
   stroke-width: 3;
 }
 
-.selected path {
-  opacity: 1;
+.segment.selected path {
+  opacity: 0.82;
   stroke: #332a24;
-  stroke-width: 4;
+  stroke-width: 2.75;
   filter: none;
 }
 
-.selected text { font-size: 10px; }
+.segment.selected text { font-size: 9.6px; }
 
 .facts {
   display: grid;
