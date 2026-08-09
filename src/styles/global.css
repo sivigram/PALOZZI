@@ -371,6 +371,12 @@ textarea {
   font-weight: 800;
 }
 
+.swatch-name {
+  max-width: 100%;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
 .colour-info {
   display: grid;
   gap: 0.25rem;
