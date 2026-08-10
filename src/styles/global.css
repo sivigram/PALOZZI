@@ -1,13 +1,13 @@
 :root {
-  --bg: #f7f0e6;
-  --paper: #fffaf2;
-  --card: #fffdf8;
-  --text: #26221f;
-  --muted: #766d65;
-  --border: #d8cabc;
-  --focus: #5b4636;
-  --button: #fbf4eb;
-  --button-selected: #6f5948;
+  --bg: #f6f2ed;
+  --paper: #fffdf9;
+  --card: rgba(255, 253, 249, 0.62);
+  --text: #3b312c;
+  --muted: #84766e;
+  --border: #d9ccc1;
+  --focus: #806e62;
+  --button: #fcf8f2;
+  --button-selected: #766257;
   --winter: #3864a4;
   --spring: #c67d48;
   --autumn: #cfa43b;
@@ -23,7 +23,17 @@ body {
   overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, Arial, sans-serif;
+  font-family: Inter, "Helvetica Neue", ui-sans-serif, system-ui, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  color: #382e29;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: 0.015em;
 }
 
 button,
@@ -34,16 +44,20 @@ button {
   min-height: 44px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.62rem 1rem;
+  padding: 0.62rem 1.15rem;
   background: var(--button);
   color: var(--text);
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  box-shadow: none;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
 }
 
 button:hover:not(:disabled) {
   border-color: var(--focus);
-  background: var(--paper);
+  background: #fffdf9;
 }
 
 button.selected,
@@ -54,32 +68,33 @@ button[aria-pressed='true'] {
 }
 
 button:disabled {
-  opacity: 0.48;
+  opacity: 0.42;
   cursor: not-allowed;
 }
 
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid rgba(60, 50, 42, 0.45);
-  outline-offset: 2px;
+  outline: 2px solid rgba(128, 110, 98, 0.58);
+  outline-offset: 3px;
 }
 
 .hero {
   max-width: 980px;
   margin: 0 auto;
-  padding: 3.5rem 1.25rem 2rem;
+  padding: 4rem 1.25rem 2.5rem;
   text-align: center;
 }
 
 .hero h1 {
-  margin: 0.3rem 0;
+  margin: 0.4rem 0 0.55rem;
   font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.07em;
 }
 
 .hero p {
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 1.02rem;
 }
 
 .eyebrow {
@@ -87,7 +102,7 @@ textarea:focus-visible {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
@@ -136,7 +151,11 @@ textarea:focus-visible {
   box-shadow: none;
 }
 
-.card h2 { margin-top: 0; }
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.55rem;
+}
 
 .form-grid {
   display: grid;
@@ -149,17 +168,21 @@ textarea:focus-visible {
 label {
   display: grid;
   gap: 0.4rem;
-  font-weight: 700;
+  color: #4d4039;
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: 0.025em;
 }
 
 input,
 textarea {
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #fff;
+  border-radius: 12px;
+  background: rgba(255, 253, 249, 0.84);
   color: var(--text);
-  padding: 0.8rem;
+  padding: 0.82rem 0.9rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .controls {
@@ -170,7 +193,7 @@ textarea {
 .control-group {
   margin: 0 0 1rem;
   border: 0;
-  border-bottom: 1px solid rgba(50, 40, 32, 0.12);
+  border-bottom: 1px solid rgba(91, 73, 63, 0.13);
   border-radius: 0;
   padding: 0 0 1rem;
 }
@@ -182,8 +205,11 @@ textarea {
 
 .control-group legend {
   padding: 0 0.35rem;
-  color: #3a302a;
-  font-weight: 800;
+  color: #57483f;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
 .button-row {
@@ -198,7 +224,7 @@ textarea {
 
 .diagram-card h2 {
   margin-bottom: 0.35rem;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
 }
 
 .diagram {
@@ -226,7 +252,7 @@ textarea {
 .centre-label { font-size: 12px; }
 
 .diagram-axis {
-  stroke: rgba(38, 34, 31, 0.28);
+  stroke: rgba(59, 49, 44, 0.22);
   stroke-width: 1.4;
   stroke-linecap: round;
 }
@@ -260,13 +286,13 @@ textarea {
 }
 
 .incompatible path {
-  opacity: 0.28;
-  filter: saturate(0.35);
+  opacity: 0.24;
+  filter: saturate(0.42);
 }
 
 .segment:hover path {
-  filter: saturate(1.1);
-  stroke-width: 4;
+  filter: saturate(1.04);
+  stroke-width: 3;
 }
 
 .segment:focus-visible path {
@@ -319,7 +345,7 @@ textarea {
 
 .facts div {
   border: 0;
-  border-top: 1px solid rgba(50, 40, 32, 0.12);
+  border-top: 1px solid rgba(91, 73, 63, 0.13);
   border-radius: 0;
   padding: 0.75rem 0 0;
 }
@@ -356,9 +382,9 @@ textarea {
 
 .colour-card {
   overflow: hidden;
-  border: 1px solid rgba(50, 40, 32, 0.1);
-  border-radius: 8px;
-  background: #fff;
+  border: 1px solid rgba(91, 73, 63, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 253, 249, 0.76);
   box-shadow: none;
 }
 
@@ -375,13 +401,16 @@ textarea {
   max-width: 100%;
   line-height: 1.25;
   overflow-wrap: anywhere;
+  letter-spacing: 0.015em;
 }
 
 .colour-info {
   display: grid;
   gap: 0.25rem;
-  padding: 0.8rem;
+  padding: 0.75rem 0.9rem 0.85rem;
   color: var(--text);
+  font-size: 0.88rem;
+  letter-spacing: 0.025em;
 }
 
 .note,
@@ -402,6 +431,17 @@ textarea {
 .pdf-actions button {
   width: 220px;
   min-height: 48px;
+}
+
+.pdf-actions button:last-child {
+  border-color: var(--button-selected);
+  background: var(--button-selected);
+  color: var(--paper);
+}
+
+.pdf-actions button:last-child:hover:not(:disabled) {
+  border-color: #604f46;
+  background: #68564d;
 }
 
 .pdf-hidden {
