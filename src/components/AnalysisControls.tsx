@@ -18,16 +18,18 @@ export function AnalysisControls({ state, onChange, onResetAnalysis, onNew }: Pr
       <div className="button-row">
         {options.map((option) => {
           const disabled = disabledOptions.includes(option);
+          const optionLabel = label(option);
           return (
             <button
               key={option}
               type="button"
               className={state[key] === option ? 'selected' : ''}
+              aria-label={optionLabel}
               aria-pressed={state[key] === option}
               disabled={disabled}
               onClick={() => set({ [key]: option } as Partial<AnalysisState>)}
             >
-              {label(option)}
+              {optionLabel}
             </button>
           );
         })}
