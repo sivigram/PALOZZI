@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { AnalysisState, ClientDetails, DominantChoice, MainSeason, PaletteColour, SeasonData } from '../types/colourAnalysis';
+import { seasonStyling } from '../data/seasonStyling';
 import { formatHsl, formatRgb, pantoneLabel } from '../utils/colourConversions';
 import { SeasonalDiagram } from './SeasonalDiagram';
 
@@ -96,14 +97,30 @@ function PaletteSelection({ title, colours }: { title: string; colours: PaletteC
   );
 }
 
-function GuideSection({ title, values }: { title: string; values: string[] }) {
+function StylingSwatches({ title, colours, variant }: { title: string; colours: PaletteColour[]; variant: 'hero' | 'neutral' }) {
   return (
-    <section className="pdf-guide-section">
+    <section className="pdf-styling-swatches">
       <h3>{title}</h3>
-      <p>{values.join(' · ')}</p>
+      <div className={`pdf-styling-grid pdf-styling-grid-${variant}`}>
+        {colours.map((colour) => (
+          <div className="pdf-styling-colour" key={colour.id}>
+            <span className="pdf-styling-swatch" style={{ backgroundColor: colour.hex }} />
+            <span className="pdf-styling-name">{colour.name}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
+
+const resolveStylingColours = (season: SeasonData, names: string[]) => names.flatMap((name) => {
+  const colour = season.palette.find((candidate) => candidate.name === name);
+  if (colour) return [colour];
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    console.warn(`[seasonStyling] ${season.id}: missing colour "${name}"`);
+  }
+  return [];
+});
 
 export function PdfPreview({ client, season }: Props) {
   const state: AnalysisState = {
@@ -122,6 +139,9 @@ export function PdfPreview({ client, season }: Props) {
   const emptyNotes = client.notes.trim().length === 0;
   const neutralColours = season.palette.filter((colour) => colour.category === 'Neutrals');
   const bestColours = season.palette.filter((colour) => colour.category !== 'Neutrals');
+  const styling = seasonStyling[season.id];
+  const stylingHeroColours = resolveStylingColours(season, styling.heroColours);
+  const stylingNeutrals = resolveStylingColours(season, styling.bestNeutrals);
 
   return (
     <div className="pdf-document">
@@ -136,16 +156,14 @@ export function PdfPreview({ client, season }: Props) {
         <p className="pdf-kicker pdf-serif-label">Your Colour Season</p>
         <h1 className="pdf-season-title">{season.name}</h1>
 
-        <div className="pdf-result-layout">
-          <div className="pdf-scales">
-            <CharacteristicScale heading="Undertone" labels={['Warm', 'Cool']} position={scalePosition.undertone[season.undertone]} />
-            <CharacteristicScale heading="Intensity" labels={['Soft', 'Medium', 'Bright']} position={scalePosition.intensity[season.intensity]} />
-            <CharacteristicScale heading="Value" labels={['Light', 'Medium', 'Deep']} position={scalePosition.value[season.value]} />
-            <CharacteristicScale heading="Contrast" labels={['Low', 'Medium', 'High']} position={scalePosition.contrast[season.contrast]} />
-          </div>
-          <div className="pdf-diagram">
-            <SeasonalDiagram state={state} onSelect={() => undefined} compact />
-          </div>
+        <div className="pdf-diagram">
+          <SeasonalDiagram state={state} onSelect={() => undefined} compact />
+        </div>
+        <div className="pdf-scales">
+          <CharacteristicScale heading="Undertone" labels={['Warm', 'Cool']} position={scalePosition.undertone[season.undertone]} />
+          <CharacteristicScale heading="Intensity" labels={['Soft', 'Medium', 'Bright']} position={scalePosition.intensity[season.intensity]} />
+          <CharacteristicScale heading="Value" labels={['Light', 'Medium', 'Deep']} position={scalePosition.value[season.value]} />
+          <CharacteristicScale heading="Contrast" labels={['Low', 'Medium', 'High']} position={scalePosition.contrast[season.contrast]} />
         </div>
 
         <section className="pdf-description">
@@ -170,18 +188,21 @@ export function PdfPreview({ client, season }: Props) {
       <PdfPage page={3}>
         <PdfBrand />
         <h1 className="pdf-page-title">How to Wear Your Palette</h1>
-        <div className="pdf-guide">
-          <GuideSection title="Best Colours" values={season.bestColours} />
-          <GuideSection title="Best Neutrals" values={season.bestNeutrals} />
-          <GuideSection title="Metals" values={season.metals} />
-          <GuideSection title="Colours to Avoid" values={season.avoid} />
-          {!emptyNotes && (
-            <section className="pdf-guide-section pdf-notes">
-              <h3>Consultation Notes</h3>
-              <p>{client.notes}</p>
-            </section>
-          )}
+        <p className="pdf-styling-season">{season.name}</p>
+        <StylingSwatches title="Best Colours" colours={stylingHeroColours} variant="hero" />
+        <StylingSwatches title="Best Neutrals" colours={stylingNeutrals} variant="neutral" />
+        <div className="pdf-styling-advice">
+          <section><h3>Metals</h3><p className="pdf-metals">{styling.metals.join(' · ')}</p></section>
+          <section><h3>Your Contrast</h3><p>{styling.contrastStrategy}</p></section>
+          <section><h3>Colours to Avoid</h3><p>{styling.avoid.join(' · ')}</p></section>
+          <section><h3>How to Wear</h3><p>{styling.howToWear}</p></section>
         </div>
+        {!emptyNotes && (
+          <section className="pdf-styling-notes">
+            <h3>Consultation Notes</h3>
+            <p>{client.notes}</p>
+          </section>
+        )}
       </PdfPage>
 
       <PdfPage page={4}>
