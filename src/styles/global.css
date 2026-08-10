@@ -550,7 +550,10 @@ textarea {
 .pdf-kicker,
 .pdf-description h2,
 .pdf-palette-section h3,
-.pdf-guide-section h3 {
+.pdf-guide-section h3,
+.pdf-styling-swatches h3,
+.pdf-styling-advice h3,
+.pdf-styling-notes h3 {
   margin: 0;
   color: #8b7c72;
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
@@ -586,17 +589,13 @@ textarea {
   font-size: 38px;
 }
 
-.pdf-result-layout {
-  display: grid;
-  grid-template-columns: 48% 52%;
-  align-items: center;
-  margin-top: 26px;
-}
-
 .pdf-scales {
   display: grid;
-  gap: 26px;
-  padding: 8px 36px 8px 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 42px;
+  max-width: 570px;
+  margin: 6px auto 0;
+  padding: 0;
 }
 
 .pdf-scale-heading {
@@ -640,12 +639,15 @@ textarea {
 
 .pdf-diagram {
   width: 100%;
+  margin: -3px auto -2px;
   pointer-events: none;
 }
 
 .pdf-diagram .diagram {
-  max-width: 340px;
+  max-width: 410px;
 }
+
+.pdf-diagram .axis-label { display: none; }
 
 .pdf-diagram .segment {
   cursor: default;
@@ -656,14 +658,14 @@ textarea {
 }
 
 .pdf-description {
-  margin-top: 25px;
-  padding-top: 24px;
+  margin-top: 20px;
+  padding-top: 18px;
   border-top: 1px solid #ded2c6;
 }
 
 .pdf-description p {
   max-width: 620px;
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   color: #51463f;
   font-family: "Cormorant Garamond", Baskerville, "Times New Roman", serif;
   font-size: 17px;
@@ -756,6 +758,99 @@ textarea {
 .pdf-notes p {
   white-space: pre-wrap;
 }
+
+.pdf-styling-season {
+  margin: 5px 0 0;
+  color: #7e6f65;
+  font-family: "Cormorant Garamond", Baskerville, "Times New Roman", serif;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pdf-styling-swatches {
+  margin-top: 24px;
+}
+
+.pdf-styling-swatches + .pdf-styling-swatches {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #ded2c6;
+}
+
+.pdf-styling-grid {
+  display: grid;
+  margin-top: 12px;
+}
+
+.pdf-styling-grid-hero {
+  grid-template-columns: repeat(4, 82px);
+  gap: 12px 26px;
+}
+
+.pdf-styling-grid-neutral {
+  grid-template-columns: repeat(6, 64px);
+  gap: 14px 18px;
+}
+
+.pdf-styling-colour {
+  text-align: center;
+}
+
+.pdf-styling-grid-hero .pdf-styling-colour { width: 82px; }
+.pdf-styling-grid-neutral .pdf-styling-colour { width: 64px; }
+
+.pdf-styling-swatch {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(77, 65, 57, 0.13);
+  border-radius: 3px;
+}
+
+.pdf-styling-name {
+  display: -webkit-box;
+  margin-top: 6px;
+  overflow: hidden;
+  color: #51463f;
+  font-size: 8px;
+  line-height: 1.25;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.pdf-styling-advice {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 34px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #ded2c6;
+}
+
+.pdf-styling-advice p,
+.pdf-styling-notes p {
+  margin: 7px 0 0;
+  color: #51463f;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.pdf-styling-advice .pdf-metals {
+  color: #6f6057;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pdf-styling-notes {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #ded2c6;
+}
+
+.pdf-styling-notes p { white-space: pre-wrap; }
 
 .pdf-page-subtitle {
   margin: 8px 0 22px;
