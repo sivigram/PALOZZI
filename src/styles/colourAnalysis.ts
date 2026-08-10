@@ -1,0 +1,13 @@
+export type MainSeason = 'winter' | 'spring' | 'summer' | 'autumn';
+export type Undertone = 'cool' | 'warm' | 'not-sure';
+export type IntensityChoice = 'high' | 'low' | 'not-sure';
+export type DominantChoice = 'bright' | 'soft' | 'light' | 'deep' | 'cool' | 'warm' | 'not-sure';
+export type MainSeasonChoice = MainSeason | 'not-sure';
+export type Value = 'light' | 'medium' | 'deep';
+export type Intensity = 'bright' | 'soft' | 'medium';
+export type Contrast = 'low' | 'medium' | 'high';
+export type PaletteCategory = 'Neutrals' | 'Reds and pinks' | 'Blues' | 'Greens' | 'Yellows and oranges' | 'Purples' | 'Accent colours';
+export type PaletteColour = { id: string; name: string; hex: string; pantone?: string | null; pantoneStatus?: 'verified' | 'approximate' | null; category: PaletteCategory };
+export type SeasonData = { id: string; name: string; mainSeason: MainSeason; undertone: 'cool' | 'warm'; value: Value; intensity: Intensity; contrast: Contrast; dominantCharacteristic: string; description: string; bestColours: string[]; bestNeutrals: string[]; metals: string[]; avoid: string[]; palette: PaletteColour[] };
+export type ClientDetails = { clientName: string; consultationDate: string; consultantName: string; notes: string };
+export type AnalysisState = { selectedUndertone: Undertone; selectedIntensity: IntensityChoice; selectedDominant: DominantChoice; selectedMainSeason: MainSeasonChoice; selectedFinalSubseason: string | null; showTechnicalDetails: boolean };
