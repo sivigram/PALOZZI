@@ -9,9 +9,16 @@ type Props = {
 };
 
 export function ActionButtons({ season, client, pdfRef }: Props) {
-  const filename = season
-    ? `colour-analysis-${sanitiseFilenamePart(client.clientName)}-${sanitiseFilenamePart(season.name)}.pdf`
-    : '';
+const formatPdfDate = (date: string) => date.replace(/-/g, '');
+
+const formatClientName = (name: string) =>
+  name
+    .trim()
+    .replace(/[^a-zA-Z0-9]+/g, '');
+
+const filename = season
+  ? `CR_${formatPdfDate(client.consultationDate)}_${formatClientName(client.clientName)}.pdf`
+  : '';
   const run = (download: boolean) => {
     if (season && pdfRef.current) void exportElementToPdf(pdfRef.current, download ? filename : undefined);
   };
