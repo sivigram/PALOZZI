@@ -68,46 +68,41 @@ button[aria-pressed='true'] {
 }
 
 button:disabled {
-  border-color: rgba(187, 172, 160, 0.58);
-  background: #f1ece7;
-  color: #978a81;
-  opacity: 0.72;
+  opacity: 0.42;
   cursor: not-allowed;
 }
 
-button:focus-visible {
-  outline: 1px solid rgba(104, 87, 77, 0.72);
-  outline-offset: 2px;
-}
-
+button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 1px solid rgba(104, 87, 77, 0.72);
-  outline-offset: 2px;
+  outline: 2px solid rgba(128, 110, 98, 0.58);
+  outline-offset: 3px;
 }
 
 .hero {
   max-width: 980px;
   margin: 0 auto;
-  padding: 3.5rem 1.25rem 2.1rem;
+  padding: 4rem 1.25rem 2.5rem;
   text-align: center;
 }
 
 .hero h1 {
-  margin: 0.45rem 0 0;
-  font-family: "Cormorant Garamond", Baskerville, "Times New Roman", serif;
-  font-size: clamp(2.15rem, 4.5vw, 3.65rem);
-  font-weight: 500;
-  letter-spacing: 0.085em;
-  line-height: 1.08;
+  margin: 0.4rem 0 0.55rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.07em;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.02rem;
 }
 
 .eyebrow {
-  margin: 0;
+  margin: 0 0 0.35rem;
   color: var(--muted);
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.24em;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
@@ -266,12 +261,7 @@ textarea {
 .quadrant path {
   stroke: var(--paper);
   stroke-width: 2;
-  transition:
-    opacity 340ms cubic-bezier(0.22, 1, 0.36, 1),
-    fill 340ms cubic-bezier(0.22, 1, 0.36, 1),
-    stroke 340ms cubic-bezier(0.22, 1, 0.36, 1),
-    stroke-width 340ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 340ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.15s ease, filter 0.15s ease, stroke-width 0.15s ease;
 }
 
 .segment {
@@ -303,7 +293,6 @@ textarea {
 .segment:hover path {
   filter: saturate(1.04);
   stroke-width: 3;
-  transition-duration: 180ms;
 }
 
 .segment:focus-visible path {
