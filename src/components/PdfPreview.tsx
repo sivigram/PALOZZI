@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
-import type { ClientDetails, PaletteColour, SeasonData } from '../types/colourAnalysis';
+import type { AnalysisState, ClientDetails, DominantChoice, MainSeason, PaletteColour, SeasonData } from '../types/colourAnalysis';
 import { formatHsl, formatRgb, pantoneLabel } from '../utils/colourConversions';
 import { SeasonalDiagram } from './SeasonalDiagram';
 
@@ -14,34 +14,28 @@ type ScaleProps = {
   position: number;
 };
 
-const normaliseColourName = (value: string) =>
-  value
-    .trim()
-    .toLowerCase()
-    .replace(/[–—-]+/g, ' ')
-    .replace(/[^a-z0-9\s]/g, '')
-    .replace(/\s+/g, ' ');
-
-const matchPaletteNames = (names: string[], palette: PaletteColour[]) => {
-  const paletteByName = new Map(palette.map((colour) => [normaliseColourName(colour.name), colour]));
-  const matched: PaletteColour[] = [];
-  const unmatched: string[] = [];
-
-  names.forEach((name) => {
-    const colour = paletteByName.get(normaliseColourName(name));
-    if (colour) matched.push(colour);
-    else unmatched.push(name);
-  });
-
-  return { matched, unmatched };
-};
-
 const scalePosition = {
   undertone: { warm: 20, cool: 80 },
   intensity: { soft: 20, medium: 50, bright: 80 },
   value: { light: 20, medium: 50, deep: 80 },
   contrast: { low: 20, medium: 50, high: 80 },
 } as const;
+
+const analysisCoordinates: Record<MainSeason, Pick<AnalysisState, 'selectedUndertone' | 'selectedIntensity'>> = {
+  winter: { selectedUndertone: 'cool', selectedIntensity: 'high' },
+  spring: { selectedUndertone: 'warm', selectedIntensity: 'high' },
+  summer: { selectedUndertone: 'cool', selectedIntensity: 'low' },
+  autumn: { selectedUndertone: 'warm', selectedIntensity: 'low' },
+};
+
+const dominantChoices: DominantChoice[] = ['bright', 'soft', 'light', 'deep', 'cool', 'warm', 'true'];
+
+const getDominantChoice = (season: SeasonData): DominantChoice => {
+  const normalised = season.dominantCharacteristic.trim().toLowerCase();
+  const dominant = dominantChoices.find((choice) => choice === normalised);
+  if (!dominant) throw new Error(`Unsupported dominant characteristic: ${season.dominantCharacteristic}`);
+  return dominant;
+};
 
 function PdfBrand() {
   return (
@@ -84,24 +78,19 @@ function CharacteristicScale({ heading, labels, position }: ScaleProps) {
   );
 }
 
-function PaletteSelection({ title, names, palette }: { title: string; names: string[]; palette: PaletteColour[] }) {
-  const { matched, unmatched } = matchPaletteNames(names, palette);
-
+function PaletteSelection({ title, colours }: { title: string; colours: PaletteColour[] }) {
   return (
     <section className="pdf-palette-section">
       <h3>{title}</h3>
-      {matched.length > 0 && (
+      {colours.length > 0 && (
         <div className="pdf-palette-grid">
-          {matched.map((colour) => (
+          {colours.map((colour) => (
             <div className="pdf-palette-item" key={colour.id}>
               <span className="pdf-palette-swatch" style={{ backgroundColor: colour.hex }} />
               <span className="pdf-palette-name">{colour.name}</span>
             </div>
           ))}
         </div>
-      )}
-      {unmatched.length > 0 && (
-        <p className="pdf-unmatched-list">{unmatched.join(' · ')}</p>
       )}
     </section>
   );
@@ -117,10 +106,9 @@ function GuideSection({ title, values }: { title: string; values: string[] }) {
 }
 
 export function PdfPreview({ client, season }: Props) {
-  const state = {
-    selectedUndertone: 'not-sure' as const,
-    selectedIntensity: 'not-sure' as const,
-    selectedDominant: 'true' as const,
+  const state: AnalysisState = {
+    ...analysisCoordinates[season.mainSeason],
+    selectedDominant: getDominantChoice(season),
     selectedMainSeason: season.mainSeason,
     selectedFinalSubseason: season.id,
     showTechnicalDetails: true,
@@ -132,6 +120,8 @@ export function PdfPreview({ client, season }: Props) {
     `${season.contrast} contrast`,
   ].map((value) => value.toUpperCase()).join(' · ');
   const emptyNotes = client.notes.trim().length === 0;
+  const neutralColours = season.palette.filter((colour) => colour.category === 'Neutrals');
+  const bestColours = season.palette.filter((colour) => colour.category !== 'Neutrals');
 
   return (
     <div className="pdf-document">
@@ -169,8 +159,8 @@ export function PdfPreview({ client, season }: Props) {
         <PdfBrand />
         <p className="pdf-kicker pdf-serif-label">Your Colour Palette</p>
         <h1 className="pdf-page-title">{season.name}</h1>
-        <PaletteSelection title="Best Colours" names={season.bestColours} palette={season.palette} />
-        <PaletteSelection title="Best Neutrals" names={season.bestNeutrals} palette={season.palette} />
+        <PaletteSelection title="Best Colours" colours={bestColours} />
+        <PaletteSelection title="Best Neutrals" colours={neutralColours} />
         <p className="pdf-palette-note">
           Your palette is designed as a visual wardrobe reference. Colours may appear differently depending on screen,
           material, lighting and print conditions.
