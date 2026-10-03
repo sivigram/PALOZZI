@@ -15,6 +15,7 @@ const today = () => new Date().toISOString().slice(0, 10);
 
 const initialClient = (): ClientDetails => ({
   clientName: '',
+  clientEmail: '',
   consultationDate: today(),
   consultantName: '',
   notes: '',

@@ -455,6 +455,35 @@ textarea {
   background: #68564d;
 }
 
+.email-pdf-action {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.email-pdf-action button {
+  width: 220px;
+  min-height: 48px;
+  border-color: var(--button-selected);
+  background: var(--button-selected);
+  color: var(--paper);
+}
+
+.email-pdf-action button:hover:not(:disabled) {
+  border-color: #604f46;
+  background: #68564d;
+}
+
+.email-pdf-action p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.email-pdf-action .error { color: #8a3f3f; }
+
 .pdf-hidden {
   position: absolute;
   top: 0;
@@ -967,6 +996,7 @@ textarea {
   .button-row button { flex: 1 1 auto; }
   .pdf-actions { flex-direction: column; }
   .pdf-actions button { width: min(100%, 320px); }
+  .email-pdf-action button { width: min(100%, 320px); }
   .diagram-card { padding: 0; }
   .axis-label { font-size: 9px; }
   .season-label { font-size: 12px; }
