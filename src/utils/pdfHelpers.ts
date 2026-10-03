@@ -1,20 +1,26 @@
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+
+const PDF_RENDER_SCALE = 1.5;
+const PDF_JPEG_QUALITY = 0.8;
+
 export const sanitiseFilenamePart = (value: string) => value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'client';
 export const createPdf = async (element: HTMLElement) => {
   const pages = Array.from(element.querySelectorAll<HTMLElement>('.pdf-page'));
   if (pages.length !== 4) throw new Error(`Expected 4 PDF pages, found ${pages.length}.`);
 
-  const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
   for (const [index, page] of pages.entries()) {
     const canvas = await html2canvas(page, {
-      scale: 2,
+      scale: PDF_RENDER_SCALE,
       backgroundColor: '#fcf9f4',
       logging: false,
       useCORS: true,
     });
     if (index > 0) pdf.addPage('a4', 'portrait');
-    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 210, 297);
+    // Each fixed A4 page is opaque, so JPEG avoids embedding a multi-megabyte lossless PNG.
+    const pageImage = canvas.toDataURL('image/jpeg', PDF_JPEG_QUALITY);
+    pdf.addImage(pageImage, 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
   }
 
   return pdf;
