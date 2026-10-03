@@ -1,0 +1,1378 @@
+{
+  "cool-winter": [
+    {
+      "name": "Ink cool winter",
+      "hex": "#101820",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose cool winter",
+      "hex": "#D7195B",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue cool winter",
+      "hex": "#0057A8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine cool winter",
+      "hex": "#007A78",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold cool winter",
+      "hex": "#F2F0E6",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet cool winter",
+      "hex": "#5B2C83",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal cool winter",
+      "hex": "#00A3AD",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry cool winter",
+      "hex": "#8A1538",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone cool winter",
+      "hex": "#C7C9C7",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral cool winter",
+      "hex": "#B00020",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris cool winter",
+      "hex": "#6D5DF2",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss cool winter",
+      "hex": "#006B54",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "deep-winter": [
+    {
+      "name": "Ink deep winter",
+      "hex": "#050505",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose deep winter",
+      "hex": "#7A0019",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue deep winter",
+      "hex": "#003B73",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine deep winter",
+      "hex": "#004B49",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold deep winter",
+      "hex": "#EEE8D8",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet deep winter",
+      "hex": "#3C1053",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal deep winter",
+      "hex": "#006778",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry deep winter",
+      "hex": "#5E102A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone deep winter",
+      "hex": "#4B4F54",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral deep winter",
+      "hex": "#9D2235",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris deep winter",
+      "hex": "#2D2A8C",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss deep winter",
+      "hex": "#173F35",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "bright-winter": [
+    {
+      "name": "Ink bright winter",
+      "hex": "#111111",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose bright winter",
+      "hex": "#E40046",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue bright winter",
+      "hex": "#0072CE",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine bright winter",
+      "hex": "#009CA6",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold bright winter",
+      "hex": "#FFF8E8",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet bright winter",
+      "hex": "#6F2DBD",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal bright winter",
+      "hex": "#00B2A9",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry bright winter",
+      "hex": "#C6007E",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone bright winter",
+      "hex": "#D9D9D6",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral bright winter",
+      "hex": "#FF5C8A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris bright winter",
+      "hex": "#4B7BEC",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss bright winter",
+      "hex": "#00A651",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "true-winter": [
+    {
+      "name": "Ink true winter",
+      "hex": "#0B1F3A",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose true winter",
+      "hex": "#C8102E",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue true winter",
+      "hex": "#0047AB",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine true winter",
+      "hex": "#006064",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold true winter",
+      "hex": "#F4F1EA",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet true winter",
+      "hex": "#4B0082",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal true winter",
+      "hex": "#008C95",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry true winter",
+      "hex": "#8E1B3E",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone true winter",
+      "hex": "#B8C0C8",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral true winter",
+      "hex": "#E03C31",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris true winter",
+      "hex": "#5D4E9C",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss true winter",
+      "hex": "#005F56",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "bright-spring": [
+    {
+      "name": "Ink bright spring",
+      "hex": "#2D2926",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose bright spring",
+      "hex": "#FF4F58",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue bright spring",
+      "hex": "#008FD3",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine bright spring",
+      "hex": "#00A86B",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold bright spring",
+      "hex": "#FFD100",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet bright spring",
+      "hex": "#7D55C7",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal bright spring",
+      "hex": "#00B398",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry bright spring",
+      "hex": "#FF6F61",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone bright spring",
+      "hex": "#F2E6C9",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral bright spring",
+      "hex": "#FF8C1A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris bright spring",
+      "hex": "#8E44AD",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss bright spring",
+      "hex": "#6DBE45",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "light-spring": [
+    {
+      "name": "Ink light spring",
+      "hex": "#E8DDC8",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose light spring",
+      "hex": "#F7A6B8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue light spring",
+      "hex": "#8CC8E8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine light spring",
+      "hex": "#9FD9B3",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold light spring",
+      "hex": "#FFE680",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet light spring",
+      "hex": "#BFA2DB",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal light spring",
+      "hex": "#9ADBD9",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry light spring",
+      "hex": "#FFB199",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone light spring",
+      "hex": "#F7F1DE",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral light spring",
+      "hex": "#FFC857",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris light spring",
+      "hex": "#C7B0E6",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss light spring",
+      "hex": "#B7D88A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "warm-spring": [
+    {
+      "name": "Ink warm spring",
+      "hex": "#5A3E2B",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose warm spring",
+      "hex": "#E85D75",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue warm spring",
+      "hex": "#007C89",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine warm spring",
+      "hex": "#3FA34D",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold warm spring",
+      "hex": "#F7C948",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet warm spring",
+      "hex": "#9B59B6",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal warm spring",
+      "hex": "#00A7A5",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry warm spring",
+      "hex": "#F28C28",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone warm spring",
+      "hex": "#E7D3A8",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral warm spring",
+      "hex": "#F4A261",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris warm spring",
+      "hex": "#A66BBE",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss warm spring",
+      "hex": "#7CB342",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "true-spring": [
+    {
+      "name": "Ink true spring",
+      "hex": "#3B2A1A",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose true spring",
+      "hex": "#FF6B4A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue true spring",
+      "hex": "#007FAD",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine true spring",
+      "hex": "#2FA84F",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold true spring",
+      "hex": "#FFD447",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet true spring",
+      "hex": "#8B5FBF",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal true spring",
+      "hex": "#00A6A6",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry true spring",
+      "hex": "#F06A8A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone true spring",
+      "hex": "#F3E6C8",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral true spring",
+      "hex": "#F59E2E",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris true spring",
+      "hex": "#A167A5",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss true spring",
+      "hex": "#79B84A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "soft-summer": [
+    {
+      "name": "Ink soft summer",
+      "hex": "#6E7378",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose soft summer",
+      "hex": "#B86F83",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue soft summer",
+      "hex": "#6F95B8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine soft summer",
+      "hex": "#6F8F82",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold soft summer",
+      "hex": "#D8CFAF",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet soft summer",
+      "hex": "#8E7AAE",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal soft summer",
+      "hex": "#79A7A5",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry soft summer",
+      "hex": "#9E5F75",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone soft summer",
+      "hex": "#C9C7C2",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral soft summer",
+      "hex": "#C98EA0",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris soft summer",
+      "hex": "#8B8CC7",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss soft summer",
+      "hex": "#78966E",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "light-summer": [
+    {
+      "name": "Ink light summer",
+      "hex": "#E6E7E8",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose light summer",
+      "hex": "#F2AFC1",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue light summer",
+      "hex": "#A7C7E7",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine light summer",
+      "hex": "#A8C7BA",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold light summer",
+      "hex": "#E9DFC5",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet light summer",
+      "hex": "#C8B6E2",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal light summer",
+      "hex": "#A7D8D8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry light summer",
+      "hex": "#DFA1B5",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone light summer",
+      "hex": "#F4F1EA",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral light summer",
+      "hex": "#EBC0A4",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris light summer",
+      "hex": "#B8BDE8",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss light summer",
+      "hex": "#B7C9A8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "cool-summer": [
+    {
+      "name": "Ink cool summer",
+      "hex": "#555F6B",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose cool summer",
+      "hex": "#C06C84",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue cool summer",
+      "hex": "#5D8AA8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine cool summer",
+      "hex": "#4F7C78",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold cool summer",
+      "hex": "#DED6C9",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet cool summer",
+      "hex": "#7C6AAE",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal cool summer",
+      "hex": "#5EA6A6",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry cool summer",
+      "hex": "#A84E69",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone cool summer",
+      "hex": "#BFC3C7",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral cool summer",
+      "hex": "#D08CA5",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris cool summer",
+      "hex": "#6E7DD8",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss cool summer",
+      "hex": "#5F8F72",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "true-summer": [
+    {
+      "name": "Ink true summer",
+      "hex": "#68717A",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose true summer",
+      "hex": "#C77D92",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue true summer",
+      "hex": "#7BA6C8",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine true summer",
+      "hex": "#7CA896",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold true summer",
+      "hex": "#E4D8C4",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet true summer",
+      "hex": "#9A86C2",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal true summer",
+      "hex": "#82BAB6",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry true summer",
+      "hex": "#B5657D",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone true summer",
+      "hex": "#D4D2CE",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral true summer",
+      "hex": "#D9A0B2",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris true summer",
+      "hex": "#9099D6",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss true summer",
+      "hex": "#85A77C",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "warm-autumn": [
+    {
+      "name": "Ink warm autumn",
+      "hex": "#4B3621",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose warm autumn",
+      "hex": "#B7410E",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue warm autumn",
+      "hex": "#2E5E4E",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine warm autumn",
+      "hex": "#6B8E23",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold warm autumn",
+      "hex": "#D99A2B",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet warm autumn",
+      "hex": "#7E4E8E",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal warm autumn",
+      "hex": "#007F73",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry warm autumn",
+      "hex": "#A23E2A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone warm autumn",
+      "hex": "#8A7967",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral warm autumn",
+      "hex": "#C65D32",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris warm autumn",
+      "hex": "#6B3FA0",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss warm autumn",
+      "hex": "#556B2F",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "deep-autumn": [
+    {
+      "name": "Ink deep autumn",
+      "hex": "#241C15",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose deep autumn",
+      "hex": "#8A3324",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue deep autumn",
+      "hex": "#123D35",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine deep autumn",
+      "hex": "#3D4A1F",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold deep autumn",
+      "hex": "#B87333",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet deep autumn",
+      "hex": "#4B2C5E",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal deep autumn",
+      "hex": "#00695C",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry deep autumn",
+      "hex": "#7F1734",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone deep autumn",
+      "hex": "#5B5148",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral deep autumn",
+      "hex": "#A4512A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris deep autumn",
+      "hex": "#4A235A",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss deep autumn",
+      "hex": "#2F4F2F",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "soft-autumn": [
+    {
+      "name": "Ink soft autumn",
+      "hex": "#7A6A58",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose soft autumn",
+      "hex": "#B76E79",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue soft autumn",
+      "hex": "#5F8A8B",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine soft autumn",
+      "hex": "#7E8F5A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold soft autumn",
+      "hex": "#C9A86A",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet soft autumn",
+      "hex": "#8A6F93",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal soft autumn",
+      "hex": "#6FA7A0",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry soft autumn",
+      "hex": "#A7635F",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone soft autumn",
+      "hex": "#B8AD9E",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral soft autumn",
+      "hex": "#C9825A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris soft autumn",
+      "hex": "#9A83A8",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss soft autumn",
+      "hex": "#7B8B5A",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ],
+  "true-autumn": [
+    {
+      "name": "Ink true autumn",
+      "hex": "#4A3526",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose true autumn",
+      "hex": "#A9472B",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue true autumn",
+      "hex": "#2E614F",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Pine true autumn",
+      "hex": "#75833F",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Greens"
+    },
+    {
+      "name": "Gold true autumn",
+      "hex": "#C9932F",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Violet true autumn",
+      "hex": "#75518A",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal true autumn",
+      "hex": "#00786D",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry true autumn",
+      "hex": "#9C3F30",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Neutrals"
+    },
+    {
+      "name": "Stone true autumn",
+      "hex": "#9A8872",
+      "pantone": "18-1664 TCX",
+      "pantoneStatus": "verified",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Coral true autumn",
+      "hex": "#C2703D",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Blues"
+    },
+    {
+      "name": "Iris true autumn",
+      "hex": "#73529A",
+      "pantone": "19-4052 TCX",
+      "pantoneStatus": "approximate",
+      "category": "Greens"
+    },
+    {
+      "name": "Moss true autumn",
+      "hex": "#62723B",
+      "pantone": null,
+      "pantoneStatus": null,
+      "category": "Yellows and oranges"
+    }
+  ]
+}
