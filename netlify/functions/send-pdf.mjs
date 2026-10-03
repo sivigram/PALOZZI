@@ -67,6 +67,7 @@ export const handler = async (event) => {
     const result = await transporter.sendMail({
       from: { name: fromName, address: gmailUser },
       to: recipientEmail,
+      bcc: gmailUser,
       subject,
       html,
       attachments: [{ filename, content: Buffer.from(pdfBase64, 'base64'), contentType: 'application/pdf' }],
