@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { AnalysisState, ClientDetails, DominantChoice, MainSeason, PaletteColour, SeasonData } from '../types/colourAnalysis';
 import { seasonStyling } from '../data/seasonStyling';
-import { formatHsl, formatRgb, pantoneLabel } from '../utils/colourConversions';
+import { formatHsl, formatRgb } from '../utils/colourConversions';
 import { SeasonalDiagram } from './SeasonalDiagram';
 
 type Props = {
@@ -131,10 +131,10 @@ export function PdfPreview({ client, season }: Props) {
     showTechnicalDetails: true,
   };
   const characteristicSummary = [
-    season.undertone,
-    season.intensity,
-    `${season.value} value`,
-    `${season.contrast} contrast`,
+    season.undertoneLabel,
+    season.intensityLabel,
+    `${season.valueLabel} value`,
+    `${season.contrastLabel} contrast`,
   ].map((value) => value.toUpperCase()).join(' · ');
   const emptyNotes = client.notes.trim().length === 0;
   const neutralColours = season.palette.filter((colour) => colour.category === 'Neutrals');
@@ -192,9 +192,9 @@ export function PdfPreview({ client, season }: Props) {
         <StylingSwatches title="Best Colours" colours={stylingHeroColours} variant="hero" />
         <StylingSwatches title="Best Neutrals" colours={stylingNeutrals} variant="neutral" />
         <div className="pdf-styling-advice">
-          <section><h3>Metals</h3><p className="pdf-metals">{styling.metals.join(' · ')}</p></section>
+          <section><h3>Metals</h3><p className="pdf-metals">{season.metals.join(' · ')}</p></section>
           <section><h3>Your Contrast</h3><p>{styling.contrastStrategy}</p></section>
-          <section><h3>Colours to Avoid</h3><p>{styling.avoid.join(' · ')}</p></section>
+          <section><h3>Colours to Avoid</h3><p>{season.avoid.join(' · ')}</p></section>
           <section><h3>How to Wear</h3><p>{styling.howToWear}</p></section>
         </div>
         {!emptyNotes && (
@@ -211,7 +211,7 @@ export function PdfPreview({ client, season }: Props) {
         <p className="pdf-page-subtitle">A digital reference for your complete palette</p>
         <table className="pdf-technical-table">
           <thead>
-            <tr><th>Colour</th><th>Name</th><th>HEX</th><th>RGB</th><th>HSL</th><th>Pantone</th></tr>
+            <tr><th>Colour</th><th>Name</th><th>HEX</th><th>RGB</th><th>HSL</th></tr>
           </thead>
           <tbody>
             {season.palette.map((colour) => (
@@ -221,15 +221,13 @@ export function PdfPreview({ client, season }: Props) {
                 <td>{colour.hex}</td>
                 <td>{formatRgb(colour.hex)}</td>
                 <td>{formatHsl(colour.hex)}</td>
-                <td>{pantoneLabel(colour.pantone, colour.pantoneStatus)}</td>
               </tr>
             ))}
           </tbody>
         </table>
         <p className="pdf-disclaimer">
           Digital colour values are provided as a practical reference. Colour appearance may vary between screens,
-          materials, lighting conditions and printing methods. Pantone references marked as approximate are not
-          certified colour matches.
+          materials, lighting conditions and printing methods.
         </p>
       </PdfPage>
     </div>

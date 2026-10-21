@@ -10,7 +10,6 @@ const validCategories: PaletteCategory[] = [
   'Purples',
   'Accent colours',
 ];
-const validPantoneStatuses = ['verified', 'approximate', null] as const;
 const hexPattern = /^#[0-9A-Fa-f]{6}$/;
 
 type RawPaletteColour = Partial<Omit<PaletteColour, 'id'>>;
@@ -23,12 +22,7 @@ const warnInvalid = (seasonId: string, index: number, reason: string) => {
 const isValidCategory = (value: unknown): value is PaletteCategory =>
   typeof value === 'string' && validCategories.includes(value as PaletteCategory);
 
-const normalisePantone = (value: unknown) => (typeof value === 'string' && value.trim() ? value : null);
-const normalisePantoneStatus = (value: unknown) =>
-  validPantoneStatuses.includes(value as (typeof validPantoneStatuses)[number]) ? value as PaletteColour['pantoneStatus'] : null;
-
 export const paletteCategories = validCategories;
-export const palettePantoneStatuses = validPantoneStatuses;
 
 export const loadPalette = (seasonId: string): PaletteColour[] => {
   const palettes = rawPalettes as RawPalettes;
@@ -60,8 +54,6 @@ export const loadPalette = (seasonId: string): PaletteColour[] => {
       id: `${seasonId}-${index + 1}`,
       name: colour.name.trim(),
       hex: colour.hex.toUpperCase(),
-      pantone: normalisePantone(colour.pantone),
-      pantoneStatus: normalisePantoneStatus(colour.pantoneStatus),
       category: colour.category,
     }];
   });

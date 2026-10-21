@@ -13,7 +13,6 @@ export function ColourPalette({ season, showTechnical, onToggle }: { season: Sea
       ) : (
         <p className="muted">No palette colours have been configured for this season.</p>
       )}
-      <p className="note">Pantone references marked as approximate are visual references only. Digital colour values and printed Pantone colours may vary depending on the display, material, lighting and printing process.</p>
     </section>
   );
 }

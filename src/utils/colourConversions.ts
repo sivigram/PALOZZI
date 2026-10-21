@@ -13,4 +13,3 @@ export const hexToHsl = (hex: string) => {
 };
 export const formatHsl = (hex: string) => { const { h, s, l } = hexToHsl(hex); return `hsl(${h}, ${s}%, ${l}%)`; };
 export const bestTextColour = (hex: string) => { const { r, g, b } = hexToRgb(hex); const yiq = (r * 299 + g * 587 + b * 114) / 1000; return yiq >= 145 ? '#1f1d1b' : '#fffaf2'; };
-export const pantoneLabel = (pantone?: string | null, status?: string | null) => !pantone ? 'Not specified' : status === 'approximate' ? `Closest Pantone reference: ${pantone}` : pantone;

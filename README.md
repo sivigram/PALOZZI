@@ -10,10 +10,7 @@ Palette colours are stored in `src/data/palettes.json` so they can be edited wit
    - `name`
    - `hex`
    - `category`
-5. Optional fields:
-   - `pantone`
-   - `pantoneStatus`
-6. Valid `category` values are:
+5. Valid `category` values are:
    - `Neutrals`
    - `Reds and pinks`
    - `Blues`
@@ -21,13 +18,9 @@ Palette colours are stored in `src/data/palettes.json` so they can be edited wit
    - `Yellows and oranges`
    - `Purples`
    - `Accent colours`
-7. Valid `pantoneStatus` values are:
-   - `verified`
-   - `approximate`
-   - `null`
-8. Keep JSON commas and quotation marks valid. Every object property must use double quotes, and every item needs a comma except the final item in an array.
-9. RGB and HSL values are calculated automatically from `hex`; do not add RGB or HSL values to the JSON file.
-10. A new GitHub commit automatically triggers a Netlify deployment.
+6. Keep JSON commas and quotation marks valid. Every object property must use double quotes, and every item needs a comma except the final item in an array.
+7. RGB and HSL values are calculated automatically from `hex`; do not add RGB or HSL values to the JSON file.
+8. A new GitHub commit automatically triggers a Netlify deployment.
 
 Copy-and-paste example:
 
@@ -35,8 +28,6 @@ Copy-and-paste example:
 {
   "name": "Royal Blue",
   "hex": "#2454C6",
-  "pantone": "2728 C",
-  "pantoneStatus": "approximate",
   "category": "Blues"
 }
 ```

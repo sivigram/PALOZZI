@@ -1,5 +1,5 @@
 import { PaletteColour } from '../types/colourAnalysis';
-import { bestTextColour, formatHsl, formatRgb, pantoneLabel } from '../utils/colourConversions';
+import { bestTextColour, formatHsl, formatRgb } from '../utils/colourConversions';
 
 type Props = {
   colour: PaletteColour;
@@ -19,7 +19,6 @@ export function ColourCard({ colour, showTechnical }: Props) {
         <span>{colour.hex}</span>
         {showTechnical && (
           <>
-            <span>{pantoneLabel(colour.pantone, colour.pantoneStatus)}</span>
             <span>{formatRgb(colour.hex)}</span>
             <span>{formatHsl(colour.hex)}</span>
           </>
