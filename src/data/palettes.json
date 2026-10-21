@@ -1,0 +1,1954 @@
+{
+  "deep-winter": [
+    {
+      "name": "Black",
+      "hex": "#050505",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Burgundy",
+      "hex": "#7A0019",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Deep Navy",
+      "hex": "#003B73",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Pine",
+      "hex": "#004B49",
+      "category": "Greens"
+    },
+    {
+      "name": "Icy White",
+      "hex": "#F2F5FA",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Violet",
+      "hex": "#3C1053",
+      "category": "Purples"
+    },
+    {
+      "name": "Petrol Blue",
+      "hex": "#006778",
+      "category": "Blues"
+    },
+    {
+      "name": "Dark Berry",
+      "hex": "#5E102A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Charcoal",
+      "hex": "#4B4F54",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Raspberry",
+      "hex": "#9D2235",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Dark Iris",
+      "hex": "#2D2A8C",
+      "category": "Purples"
+    },
+    {
+      "name": "Evergreen",
+      "hex": "#173F35",
+      "category": "Greens"
+    },
+    {
+      "name": "Icy Lavender",
+      "hex": "#E2DDF4",
+      "category": "Purples"
+    },
+    {
+      "name": "Midnight Navy",
+      "hex": "#171C30",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cool Emerald",
+      "hex": "#006B58",
+      "category": "Greens"
+    },
+    {
+      "name": "Cranberry",
+      "hex": "#A52243",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Icy Mint",
+      "hex": "#D9F0E9",
+      "category": "Greens"
+    },
+    {
+      "name": "Black Cherry",
+      "hex": "#4B122A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Sapphire",
+      "hex": "#163A91",
+      "category": "Blues"
+    },
+    {
+      "name": "Dark Petrol",
+      "hex": "#273F49",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Deep Plum",
+      "hex": "#512D56",
+      "category": "Purples"
+    },
+    {
+      "name": "Icy Blue",
+      "hex": "#D9E9F6",
+      "category": "Blues"
+    },
+    {
+      "name": "Cool Silver",
+      "hex": "#C9CDD6",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cool White",
+      "hex": "#F5F4F8",
+      "category": "Neutrals"
+    }
+  ],
+  "cool-winter": [
+    {
+      "name": "Black Navy",
+      "hex": "#101820",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Fuchsia",
+      "hex": "#D7195B",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Cobalt Blue",
+      "hex": "#0057A8",
+      "category": "Blues"
+    },
+    {
+      "name": "Cool Teal",
+      "hex": "#007A78",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Optic White",
+      "hex": "#F8FAFF",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Purple",
+      "hex": "#5B2C83",
+      "category": "Purples"
+    },
+    {
+      "name": "Bright Turquoise",
+      "hex": "#00A3AD",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry",
+      "hex": "#8A1538",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Silver Grey",
+      "hex": "#C7C9C7",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cool Red",
+      "hex": "#B00020",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Electric Violet",
+      "hex": "#6D5DF2",
+      "category": "Purples"
+    },
+    {
+      "name": "Emerald",
+      "hex": "#006B54",
+      "category": "Greens"
+    },
+    {
+      "name": "Icy Lilac",
+      "hex": "#E7E1FA",
+      "category": "Purples"
+    },
+    {
+      "name": "Cool Magenta",
+      "hex": "#8E237B",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Icy Rose",
+      "hex": "#F3DCE9",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Black",
+      "hex": "#111111",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Clear Periwinkle",
+      "hex": "#7886D9",
+      "category": "Blues"
+    },
+    {
+      "name": "Ruby",
+      "hex": "#C40032",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Cold Turquoise",
+      "hex": "#007E97",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Icy Mint",
+      "hex": "#D8F4EE",
+      "category": "Greens"
+    },
+    {
+      "name": "Dark Navy",
+      "hex": "#162A52",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Optical White",
+      "hex": "#FFFFFF",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Blue Violet",
+      "hex": "#4937B5",
+      "category": "Blues"
+    },
+    {
+      "name": "Icy Blue",
+      "hex": "#DCECF7",
+      "category": "Blues"
+    }
+  ],
+  "bright-winter": [
+    {
+      "name": "Near Black",
+      "hex": "#111111",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Vivid Pink",
+      "hex": "#E40046",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Electric Blue",
+      "hex": "#0072CE",
+      "category": "Blues"
+    },
+    {
+      "name": "Bright Turquoise",
+      "hex": "#009CA6",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Cool White",
+      "hex": "#F7FAFF",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Violet",
+      "hex": "#6F2DBD",
+      "category": "Purples"
+    },
+    {
+      "name": "Jade",
+      "hex": "#00B2A9",
+      "category": "Greens"
+    },
+    {
+      "name": "Magenta",
+      "hex": "#C6007E",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Pale Grey",
+      "hex": "#D9D9D6",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Hot Pink",
+      "hex": "#FF5C8A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Cornflower Blue",
+      "hex": "#4B7BEC",
+      "category": "Blues"
+    },
+    {
+      "name": "Bright Green",
+      "hex": "#00A651",
+      "category": "Greens"
+    },
+    {
+      "name": "Icy Pink",
+      "hex": "#FFE0F1",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Vivid Cyan",
+      "hex": "#00D5E8",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Ultramarine",
+      "hex": "#2525F4",
+      "category": "Blues"
+    },
+    {
+      "name": "Icy Aqua",
+      "hex": "#D5F8F7",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Icy Lemon",
+      "hex": "#F6FFCF",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Black",
+      "hex": "#08090F",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Bright Lime",
+      "hex": "#86D84A",
+      "category": "Greens"
+    },
+    {
+      "name": "Shocking Pink",
+      "hex": "#FF008A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Optical White",
+      "hex": "#FFFFFF",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Icy Lavender",
+      "hex": "#E5DEFC",
+      "category": "Purples"
+    },
+    {
+      "name": "Electric Purple",
+      "hex": "#8600DF",
+      "category": "Purples"
+    },
+    {
+      "name": "Royal Blue",
+      "hex": "#284BCB",
+      "category": "Blues"
+    }
+  ],
+  "true-winter": [
+    {
+      "name": "Midnight Blue",
+      "hex": "#0B1F3A",
+      "category": "Blues"
+    },
+    {
+      "name": "Crimson",
+      "hex": "#C8102E",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Royal Blue",
+      "hex": "#0047AB",
+      "category": "Blues"
+    },
+    {
+      "name": "Deep Teal",
+      "hex": "#006064",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Cool White",
+      "hex": "#F4F7FB",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Indigo",
+      "hex": "#4B0082",
+      "category": "Blues"
+    },
+    {
+      "name": "Turquoise",
+      "hex": "#008C95",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry Red",
+      "hex": "#8E1B3E",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Silver Grey",
+      "hex": "#B8C0C8",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cool Scarlet",
+      "hex": "#C90D36",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Purple",
+      "hex": "#5D4E9C",
+      "category": "Purples"
+    },
+    {
+      "name": "Pine Green",
+      "hex": "#005F56",
+      "category": "Greens"
+    },
+    {
+      "name": "Berry",
+      "hex": "#8B1764",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Emerald",
+      "hex": "#007D64",
+      "category": "Greens"
+    },
+    {
+      "name": "Ice Blue",
+      "hex": "#D8E9FA",
+      "category": "Blues"
+    },
+    {
+      "name": "Black",
+      "hex": "#080B15",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Icy Pink",
+      "hex": "#F5D9E8",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Cool Cherry",
+      "hex": "#C9003C",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Deep Turquoise",
+      "hex": "#006A70",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Amethyst",
+      "hex": "#542A8D",
+      "category": "Purples"
+    },
+    {
+      "name": "Cool Fuchsia",
+      "hex": "#C60071",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Deep Navy",
+      "hex": "#182B55",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Icy Lavender",
+      "hex": "#E7E1F6",
+      "category": "Purples"
+    },
+    {
+      "name": "Icy Mint",
+      "hex": "#DCEFEA",
+      "category": "Greens"
+    }
+  ],
+  "light-summer": [
+    {
+      "name": "Light Grey",
+      "hex": "#E6E7E8",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Pink",
+      "hex": "#F2AFC1",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Powder Blue",
+      "hex": "#A7C7E7",
+      "category": "Blues"
+    },
+    {
+      "name": "Seafoam",
+      "hex": "#A8C7BA",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Cool Pearl",
+      "hex": "#E8E7E9",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Lilac",
+      "hex": "#C8B6E2",
+      "category": "Purples"
+    },
+    {
+      "name": "Pale Aqua",
+      "hex": "#A7D8D8",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Dusty Blush",
+      "hex": "#DFA1B5",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Off White",
+      "hex": "#F4F1EA",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cool Blush",
+      "hex": "#EBC3D2",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Periwinkle",
+      "hex": "#B8BDE8",
+      "category": "Blues"
+    },
+    {
+      "name": "Sage",
+      "hex": "#B7C9A8",
+      "category": "Greens"
+    },
+    {
+      "name": "Rosewater",
+      "hex": "#F4D5E1",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Sea Glass",
+      "hex": "#B9DFDC",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Light Cool Sage",
+      "hex": "#B7D5C7",
+      "category": "Greens"
+    },
+    {
+      "name": "Soft Raspberry",
+      "hex": "#CE8FAA",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Pearl Grey",
+      "hex": "#D9DCE1",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Blue-Green",
+      "hex": "#9DCBCB",
+      "category": "Blues"
+    },
+    {
+      "name": "Misty Mauve",
+      "hex": "#B6B3C4",
+      "category": "Purples"
+    },
+    {
+      "name": "Pale Lilac",
+      "hex": "#D8BEDD",
+      "category": "Purples"
+    },
+    {
+      "name": "Light Cool Taupe",
+      "hex": "#CFC7CB",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Misty Lavender",
+      "hex": "#D4CEE5",
+      "category": "Purples"
+    },
+    {
+      "name": "Pale Cool Lemon",
+      "hex": "#F0EDCF",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Soft Mauve",
+      "hex": "#C8A9C1",
+      "category": "Purples"
+    }
+  ],
+  "cool-summer": [
+    {
+      "name": "Slate",
+      "hex": "#555F6B",
+      "category": "Blues"
+    },
+    {
+      "name": "Muted Rose",
+      "hex": "#C06C84",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Dusty Blue",
+      "hex": "#5D8AA8",
+      "category": "Blues"
+    },
+    {
+      "name": "Sea Green",
+      "hex": "#4F7C78",
+      "category": "Greens"
+    },
+    {
+      "name": "Cool Greige",
+      "hex": "#D6D2D7",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Lavender",
+      "hex": "#7C6AAE",
+      "category": "Purples"
+    },
+    {
+      "name": "Muted Teal",
+      "hex": "#5EA6A6",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Berry Rose",
+      "hex": "#A84E69",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Silver Grey",
+      "hex": "#BFC3C7",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dusty Pink",
+      "hex": "#D08CA5",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Periwinkle",
+      "hex": "#6E7DD8",
+      "category": "Blues"
+    },
+    {
+      "name": "Sage",
+      "hex": "#5F8F72",
+      "category": "Greens"
+    },
+    {
+      "name": "Heather",
+      "hex": "#A18BB7",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Cool White",
+      "hex": "#F0F0F2",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Cool Burgundy",
+      "hex": "#87516E",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Soft Navy",
+      "hex": "#435776",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cornflower",
+      "hex": "#7397C5",
+      "category": "Blues"
+    },
+    {
+      "name": "Cool Taupe",
+      "hex": "#AAA1AB",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cool Sage",
+      "hex": "#93AEA6",
+      "category": "Greens"
+    },
+    {
+      "name": "Muted Raspberry",
+      "hex": "#B16C98",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Silver Blue",
+      "hex": "#AABCD2",
+      "category": "Blues"
+    },
+    {
+      "name": "Soft Periwinkle",
+      "hex": "#8C92C3",
+      "category": "Blues"
+    },
+    {
+      "name": "Muted Plum",
+      "hex": "#92748F",
+      "category": "Purples"
+    },
+    {
+      "name": "Cool Rose",
+      "hex": "#C487AB",
+      "category": "Reds and pinks"
+    }
+  ],
+  "soft-summer": [
+    {
+      "name": "Slate Grey",
+      "hex": "#6E7378",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dusty Rose",
+      "hex": "#B86F83",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Muted Cornflower",
+      "hex": "#6F95B8",
+      "category": "Blues"
+    },
+    {
+      "name": "Grey Sage",
+      "hex": "#6F8F82",
+      "category": "Greens"
+    },
+    {
+      "name": "Soft Cool Ivory",
+      "hex": "#E1DFDA",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dusty Violet",
+      "hex": "#8E7AAE",
+      "category": "Purples"
+    },
+    {
+      "name": "Soft Sea Green",
+      "hex": "#79A7A5",
+      "category": "Greens"
+    },
+    {
+      "name": "Muted Berry",
+      "hex": "#9E5F75",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Silver Stone",
+      "hex": "#C9C7C2",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Cool Rose",
+      "hex": "#C98EA0",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Periwinkle",
+      "hex": "#8B8CC7",
+      "category": "Blues"
+    },
+    {
+      "name": "Sage Green",
+      "hex": "#78966E",
+      "category": "Greens"
+    },
+    {
+      "name": "Smoky Plum",
+      "hex": "#78677C",
+      "category": "Purples"
+    },
+    {
+      "name": "Cool Stone",
+      "hex": "#E4E0DE",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Petrol",
+      "hex": "#527F88",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Muted Cool Rose",
+      "hex": "#BC8D9D",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Antique Rose",
+      "hex": "#B994A2",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Mist Blue",
+      "hex": "#A3B7C5",
+      "category": "Blues"
+    },
+    {
+      "name": "Mushroom Grey",
+      "hex": "#AAA39F",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dusty Navy",
+      "hex": "#536574",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Muted Slate",
+      "hex": "#7D8795",
+      "category": "Blues"
+    },
+    {
+      "name": "Mauve Taupe",
+      "hex": "#967F92",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Smoky Lilac",
+      "hex": "#B5A6BC",
+      "category": "Purples"
+    },
+    {
+      "name": "Muted Aqua",
+      "hex": "#91B0B0",
+      "category": "Accent colours"
+    }
+  ],
+  "true-summer": [
+    {
+      "name": "Slate Grey",
+      "hex": "#68717A",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Muted Pink",
+      "hex": "#C77D92",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Summer Blue",
+      "hex": "#7BA6C8",
+      "category": "Blues"
+    },
+    {
+      "name": "Soft Sage",
+      "hex": "#7CA896",
+      "category": "Greens"
+    },
+    {
+      "name": "Cool Light Taupe",
+      "hex": "#DCD9DC",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Lavender",
+      "hex": "#9A86C2",
+      "category": "Purples"
+    },
+    {
+      "name": "Seafoam",
+      "hex": "#82BAB6",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Dusty Berry",
+      "hex": "#B5657D",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Pale Grey",
+      "hex": "#D4D2CE",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose Pink",
+      "hex": "#D9A0B2",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Periwinkle",
+      "hex": "#9099D6",
+      "category": "Blues"
+    },
+    {
+      "name": "Sage",
+      "hex": "#85A77C",
+      "category": "Greens"
+    },
+    {
+      "name": "Cool Teal",
+      "hex": "#698E91",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Dusty Pink",
+      "hex": "#CE9BB5",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Cool White",
+      "hex": "#F1F0F1",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Navy",
+      "hex": "#4F6381",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Powder Blue",
+      "hex": "#A5C9DC",
+      "category": "Blues"
+    },
+    {
+      "name": "Cool Soft Raspberry",
+      "hex": "#B96D91",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Blue Grey",
+      "hex": "#7E8999",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Muted Plum",
+      "hex": "#937B9C",
+      "category": "Purples"
+    },
+    {
+      "name": "Pearl Grey",
+      "hex": "#C6C9D0",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rose Mauve",
+      "hex": "#B47E9E",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Soft Seafoam",
+      "hex": "#7DA9A7",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Blue Lavender",
+      "hex": "#AAA6CF",
+      "category": "Blues"
+    }
+  ],
+  "light-spring": [
+    {
+      "name": "Ivory Beige",
+      "hex": "#E8DDC8",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Warm Pink",
+      "hex": "#F7A6B8",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Light Blue",
+      "hex": "#8CC8E8",
+      "category": "Blues"
+    },
+    {
+      "name": "Fresh Mint",
+      "hex": "#9FD9B3",
+      "category": "Greens"
+    },
+    {
+      "name": "Butter Yellow",
+      "hex": "#FFE680",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Light Peach Pink",
+      "hex": "#F5C2C9",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Pale Turquoise",
+      "hex": "#9ADBD9",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Peach",
+      "hex": "#FFB199",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Ivory",
+      "hex": "#F7F1DE",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Marigold",
+      "hex": "#FFC857",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Soft Coral Pink",
+      "hex": "#F6B4A8",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Pistachio",
+      "hex": "#B7D88A",
+      "category": "Greens"
+    },
+    {
+      "name": "Light Warm Coral",
+      "hex": "#F7B6A4",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Soft Cornflower",
+      "hex": "#A8CBE9",
+      "category": "Blues"
+    },
+    {
+      "name": "Apple Mint",
+      "hex": "#B7E4AD",
+      "category": "Greens"
+    },
+    {
+      "name": "Fresh Pistachio",
+      "hex": "#D5E6A1",
+      "category": "Greens"
+    },
+    {
+      "name": "Vanilla",
+      "hex": "#FFF0BA",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Apricot",
+      "hex": "#F8D8A9",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Blush",
+      "hex": "#F9C2B8",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Light Aqua Green",
+      "hex": "#B3E1C6",
+      "category": "Greens"
+    },
+    {
+      "name": "Champagne",
+      "hex": "#F5E8C8",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Pale Golden Green",
+      "hex": "#D8E6B1",
+      "category": "Greens"
+    },
+    {
+      "name": "Light Honey",
+      "hex": "#F6DBA1",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Pale Warm Coral",
+      "hex": "#F9B9A5",
+      "category": "Reds and pinks"
+    }
+  ],
+  "bright-spring": [
+    {
+      "name": "Charcoal",
+      "hex": "#2D2926",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Coral Pink",
+      "hex": "#FF4F58",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Bright Blue",
+      "hex": "#008FD3",
+      "category": "Blues"
+    },
+    {
+      "name": "Emerald",
+      "hex": "#00A86B",
+      "category": "Greens"
+    },
+    {
+      "name": "Golden Yellow",
+      "hex": "#FFD100",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Bright Orchid",
+      "hex": "#D14DC3",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal",
+      "hex": "#00B398",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Bright Coral",
+      "hex": "#FF6F61",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Cream",
+      "hex": "#F2E6C9",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Tangerine",
+      "hex": "#FF8C1A",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Orchid",
+      "hex": "#8E44AD",
+      "category": "Purples"
+    },
+    {
+      "name": "Leaf Green",
+      "hex": "#6DBE45",
+      "category": "Greens"
+    },
+    {
+      "name": "Tropical Cyan",
+      "hex": "#00C9E5",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Hot Pink",
+      "hex": "#F72C9B",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Acid Lime",
+      "hex": "#C5E627",
+      "category": "Greens"
+    },
+    {
+      "name": "Bright Turquoise",
+      "hex": "#00BBD1",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Bright Jade",
+      "hex": "#00C88A",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Ivory",
+      "hex": "#FFF6DD",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Bright Warm Violet",
+      "hex": "#BB4EBA",
+      "category": "Purples"
+    },
+    {
+      "name": "Vivid Orchid",
+      "hex": "#C146D8",
+      "category": "Purples"
+    },
+    {
+      "name": "Poppy Red",
+      "hex": "#FF4136",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Bright Cerise",
+      "hex": "#E93681",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Bright Peach",
+      "hex": "#FFAB76",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Bright Watermelon",
+      "hex": "#FF4F7B",
+      "category": "Reds and pinks"
+    }
+  ],
+  "warm-spring": [
+    {
+      "name": "Chocolate Brown",
+      "hex": "#5A3E2B",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Warm Pink",
+      "hex": "#E85D75",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Deep Turquoise",
+      "hex": "#007C89",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Fresh Green",
+      "hex": "#3FA34D",
+      "category": "Greens"
+    },
+    {
+      "name": "Golden Yellow",
+      "hex": "#F7C948",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Orchid",
+      "hex": "#C26A9C",
+      "category": "Purples"
+    },
+    {
+      "name": "Clear Teal",
+      "hex": "#00A7A5",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Tangerine",
+      "hex": "#F28C28",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Sand",
+      "hex": "#E7D3A8",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Apricot",
+      "hex": "#F4A261",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Pink Orchid",
+      "hex": "#D18AAE",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Spring Green",
+      "hex": "#7CB342",
+      "category": "Greens"
+    },
+    {
+      "name": "Tomato Red",
+      "hex": "#E95031",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Chartreuse",
+      "hex": "#C3D445",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Turquoise",
+      "hex": "#2BA6B1",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Marigold",
+      "hex": "#F5A623",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Ivory",
+      "hex": "#FFF2D7",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Warm Jade",
+      "hex": "#32A878",
+      "category": "Greens"
+    },
+    {
+      "name": "Salmon",
+      "hex": "#F58A79",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Warm Raspberry",
+      "hex": "#D83F62",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Fresh Leaf Green",
+      "hex": "#6FB94B",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Aqua",
+      "hex": "#3CC6B4",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Golden Beige",
+      "hex": "#E5BD79",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Sunshine Yellow",
+      "hex": "#FFE05B",
+      "category": "Yellows and oranges"
+    }
+  ],
+  "true-spring": [
+    {
+      "name": "Chocolate",
+      "hex": "#3B2A1A",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Coral Red",
+      "hex": "#FF6B4A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Tropical Blue",
+      "hex": "#007FAD",
+      "category": "Blues"
+    },
+    {
+      "name": "Fresh Green",
+      "hex": "#2FA84F",
+      "category": "Greens"
+    },
+    {
+      "name": "Sunny Yellow",
+      "hex": "#FFD447",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Orchid",
+      "hex": "#C87DAA",
+      "category": "Purples"
+    },
+    {
+      "name": "Turquoise",
+      "hex": "#00A6A6",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Warm Pink",
+      "hex": "#F06A8A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Ivory",
+      "hex": "#F3E6C8",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Orange",
+      "hex": "#F59E2E",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Rose Orchid",
+      "hex": "#C782A2",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Leaf Green",
+      "hex": "#79B84A",
+      "category": "Greens"
+    },
+    {
+      "name": "Clear Spring Pink",
+      "hex": "#F48EAF",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Golden Sand",
+      "hex": "#E7C58B",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Poppy Red",
+      "hex": "#F64B39",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Warm Violet",
+      "hex": "#9272C4",
+      "category": "Purples"
+    },
+    {
+      "name": "Spring Green",
+      "hex": "#3FB86A",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Rose",
+      "hex": "#F38C9B",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Bright Apricot",
+      "hex": "#FF8A47",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Clear Turquoise",
+      "hex": "#21A99B",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Fresh Lime",
+      "hex": "#9CCC56",
+      "category": "Greens"
+    },
+    {
+      "name": "Light Peach",
+      "hex": "#FFBF9C",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Ivory",
+      "hex": "#FFF6DF",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Sunshine Yellow",
+      "hex": "#FFE044",
+      "category": "Yellows and oranges"
+    }
+  ],
+  "deep-autumn": [
+    {
+      "name": "Espresso Black",
+      "hex": "#241C15",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Oxide Red",
+      "hex": "#8A3324",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Deep Forest Teal",
+      "hex": "#123D35",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Dark Olive",
+      "hex": "#3D4A1F",
+      "category": "Greens"
+    },
+    {
+      "name": "Burnished Copper",
+      "hex": "#B87333",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Aubergine",
+      "hex": "#633B44",
+      "category": "Purples"
+    },
+    {
+      "name": "Rich Teal",
+      "hex": "#00695C",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Black Cherry",
+      "hex": "#7F1734",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Warm Charcoal",
+      "hex": "#5B5148",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rust",
+      "hex": "#A4512A",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Deep Warm Plum",
+      "hex": "#653A47",
+      "category": "Purples"
+    },
+    {
+      "name": "Forest Green",
+      "hex": "#2F4F2F",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Cream",
+      "hex": "#E0C8A2",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dark Chocolate",
+      "hex": "#603B2B",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Peacock",
+      "hex": "#145C58",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Antique Gold",
+      "hex": "#A47A28",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Deep Warm Burgundy",
+      "hex": "#733D39",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Deep Warm Navy",
+      "hex": "#343D38",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Pumpkin",
+      "hex": "#BD6228",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Dark Aubergine",
+      "hex": "#573A45",
+      "category": "Purples"
+    },
+    {
+      "name": "Warm Stone",
+      "hex": "#B8A083",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Copper Rose",
+      "hex": "#9B5A48",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Oxblood Brown",
+      "hex": "#81352E",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Chestnut",
+      "hex": "#80452B",
+      "category": "Neutrals"
+    }
+  ],
+  "soft-autumn": [
+    {
+      "name": "Warm Taupe",
+      "hex": "#7A6A58",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dusty Rose",
+      "hex": "#B76E79",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Muted Petrol",
+      "hex": "#5F8A8B",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Soft Olive",
+      "hex": "#7E8F5A",
+      "category": "Greens"
+    },
+    {
+      "name": "Muted Gold",
+      "hex": "#C9A86A",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Dusty Mauve",
+      "hex": "#A6817D",
+      "category": "Purples"
+    },
+    {
+      "name": "Soft Teal",
+      "hex": "#6FA7A0",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Muted Brick",
+      "hex": "#A7635F",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Stone Beige",
+      "hex": "#B8AD9E",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Terracotta",
+      "hex": "#C9825A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Muted Clay Rose",
+      "hex": "#B28E85",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Moss",
+      "hex": "#7B8B5A",
+      "category": "Greens"
+    },
+    {
+      "name": "Soft Cream",
+      "hex": "#E8DCC8",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Soft Cocoa",
+      "hex": "#8C7765",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dusty Jade",
+      "hex": "#81A093",
+      "category": "Greens"
+    },
+    {
+      "name": "Dusty Apricot",
+      "hex": "#D3A38B",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Muted Olive",
+      "hex": "#96956B",
+      "category": "Greens"
+    },
+    {
+      "name": "Mushroom",
+      "hex": "#A89780",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Warm Slate Blue",
+      "hex": "#77939A",
+      "category": "Blues"
+    },
+    {
+      "name": "Clay Rose",
+      "hex": "#BD8E82",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Soft Ochre",
+      "hex": "#B9A16C",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Soft Warm Petrol",
+      "hex": "#658A82",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Muted Honey",
+      "hex": "#C7AC77",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Muted Salmon",
+      "hex": "#C58F7E",
+      "category": "Reds and pinks"
+    }
+  ],
+  "warm-autumn": [
+    {
+      "name": "Dark Chocolate",
+      "hex": "#4B3621",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Rust Red",
+      "hex": "#B7410E",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Deep Pine",
+      "hex": "#2E5E4E",
+      "category": "Greens"
+    },
+    {
+      "name": "Olive Green",
+      "hex": "#6B8E23",
+      "category": "Greens"
+    },
+    {
+      "name": "Golden Ochre",
+      "hex": "#D99A2B",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Plum",
+      "hex": "#854F52",
+      "category": "Purples"
+    },
+    {
+      "name": "Dark Turquoise",
+      "hex": "#007F73",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Brick Red",
+      "hex": "#A23E2A",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Warm Taupe",
+      "hex": "#8A7967",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Burnt Orange",
+      "hex": "#C65D32",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Aubergine",
+      "hex": "#754650",
+      "category": "Purples"
+    },
+    {
+      "name": "Moss Green",
+      "hex": "#556B2F",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Cream",
+      "hex": "#F0D7AC",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Warm Aubergine",
+      "hex": "#70404A",
+      "category": "Purples"
+    },
+    {
+      "name": "Deep Jade",
+      "hex": "#39745A",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Oxblood",
+      "hex": "#8F4135",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Golden Olive",
+      "hex": "#99902D",
+      "category": "Greens"
+    },
+    {
+      "name": "Camel",
+      "hex": "#C6A16C",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Paprika",
+      "hex": "#B8472A",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Moss Olive",
+      "hex": "#68723C",
+      "category": "Greens"
+    },
+    {
+      "name": "Caramel",
+      "hex": "#A96A35",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Warm Mustard",
+      "hex": "#C29B32",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Dark Cinnamon",
+      "hex": "#8C482F",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Deep Petrol",
+      "hex": "#386E66",
+      "category": "Accent colours"
+    }
+  ],
+  "true-autumn": [
+    {
+      "name": "Dark Chocolate",
+      "hex": "#4A3526",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Terracotta",
+      "hex": "#A9472B",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Forest Green",
+      "hex": "#2E614F",
+      "category": "Greens"
+    },
+    {
+      "name": "Olive",
+      "hex": "#75833F",
+      "category": "Greens"
+    },
+    {
+      "name": "Ochre",
+      "hex": "#C9932F",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Plum",
+      "hex": "#845258",
+      "category": "Purples"
+    },
+    {
+      "name": "Teal",
+      "hex": "#00786D",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Brick Red",
+      "hex": "#9C3F30",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Taupe",
+      "hex": "#9A8872",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Copper",
+      "hex": "#C2703D",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Deep Terracotta Rose",
+      "hex": "#9A5A50",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Moss",
+      "hex": "#62723B",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Cream",
+      "hex": "#EAD6B4",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Deep Warm Plum",
+      "hex": "#754B56",
+      "category": "Purples"
+    },
+    {
+      "name": "Moss Green",
+      "hex": "#507049",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Forest Teal",
+      "hex": "#386B59",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Antique Gold",
+      "hex": "#B49A38",
+      "category": "Yellows and oranges"
+    },
+    {
+      "name": "Warm Chocolate",
+      "hex": "#7A5238",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Camel",
+      "hex": "#C3A17A",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Peacock Teal",
+      "hex": "#286A65",
+      "category": "Accent colours"
+    },
+    {
+      "name": "Golden Camel",
+      "hex": "#C29A63",
+      "category": "Neutrals"
+    },
+    {
+      "name": "Dark Moss",
+      "hex": "#455C36",
+      "category": "Greens"
+    },
+    {
+      "name": "Warm Terracotta",
+      "hex": "#A45B37",
+      "category": "Reds and pinks"
+    },
+    {
+      "name": "Warm Teal",
+      "hex": "#397568",
+      "category": "Accent colours"
+    }
+  ]
+}
